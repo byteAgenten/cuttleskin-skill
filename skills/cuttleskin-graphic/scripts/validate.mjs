@@ -421,15 +421,18 @@ function parseElement(value, path, issues, ids) {
 	const id = nonEmptyString(input.id, joinPath(path, "id"), issues);
 	if (id === INVALID) return INVALID;
 	if (ids.has(id)) return issues.add(joinPath(path, "id"), `Duplicate element id: ${id}`, "config.duplicateId", { id });
+	const name = optional(input.name, (v) => nonEmptyString(v, joinPath(path, "name"), issues));
+	if (name === INVALID) return INVALID;
 	const eventsPath = joinPath(path, "events");
 	const before = issues.issues.length;
 	const events = list(input.events, eventsPath, issues, (v, p) => nonEmptyString(v, p, issues));
 	if (issues.issues.length > before) return INVALID;
 	ids.add(id);
-	return events.length ? {
+	return {
 		id,
-		events
-	} : { id };
+		...name === void 0 ? {} : { name },
+		...events.length ? { events } : {}
+	};
 }
 function parseSettings(value, path, issues) {
 	const input = record(value, path, issues);

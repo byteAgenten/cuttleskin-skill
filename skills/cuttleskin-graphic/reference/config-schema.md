@@ -142,10 +142,13 @@ Folge für Schwellen:
 ## elements (optional)
 
 ```json
-"elements": [{ "id": "power-button", "events": ["click"] }]
+"elements": [{ "id": "power-button", "name": "powerButton", "events": ["click"] }]
 ```
 
 Leitet DOM-Ereignisse des Elements an die einbettende Anwendung weiter (`element.click`). Für reine Anzeigen nicht nötig.
+
+- `name` (optional, camelCase wie Variablennamen, eindeutig): Name, unter dem das Element seine Ereignisse meldet. Die Anwendung reagiert auf den Namen statt auf die SVG-ID und bleibt so vom SVG entkoppelt. Ohne `name` wird die ID gemeldet.
+- Der Listener erhält `(name, element, event, box)`: Name, SVG-Element, DOM-Ereignis und Bildschirmrechteck des Elements.
 
 ## Portal-Besonderheiten
 
