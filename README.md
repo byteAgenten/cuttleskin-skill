@@ -15,7 +15,8 @@ Edit, preview and export the graphics in the cuttleskin editor at
 
 The skill contains the rules for drawing such SVGs, a full reference of the configuration,
 proven patterns, a validator (`scripts/validate.mjs`, Node.js 18+, no dependencies) and 14
-example graphics. The skill text is written in German; Claude applies it in any language.
+example graphics. `SKILL.md` is in English; the detailed reference files and some example
+READMEs are in German. Claude applies the skill in any language.
 
 ## Install
 
