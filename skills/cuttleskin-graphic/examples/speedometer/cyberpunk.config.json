@@ -1,0 +1,114 @@
+{
+  "variables": [
+    {
+      "name": "speed",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 200,
+      "defaultValue": 0
+    }
+  ],
+  "transformations": [
+    {
+      "name": "needle_angle",
+      "type": "rotate",
+      "element": "cp-needle",
+      "variable": "speed",
+      "origin": { "x": 160, "y": 170 },
+      "transition": { "duration": 300, "easing": "easeout" },
+      "frames": [
+        { "at": "$min", "value": -120 },
+        { "at": "$max", "value": 120 }
+      ]
+    },
+    {
+      "name": "ring_color",
+      "type": "stroke-color",
+      "element": "cp-ring",
+      "variable": "speed",
+      "transition": { "duration": 300, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": "#00f0ff" },
+        { "at": 100, "value": "#ff00e6", "label": "boost" },
+        { "at": "$max", "value": "#ff2a2a" }
+      ]
+    },
+    {
+      "name": "ring_width",
+      "type": "stroke-width",
+      "element": "cp-ring",
+      "variable": "speed",
+      "transition": { "duration": 300, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 3 },
+        { "at": "$max", "value": 12 }
+      ]
+    },
+    {
+      "name": "speed_text",
+      "type": "text",
+      "element": "cp-speed-text",
+      "variable": "speed",
+      "bind": true
+    },
+    {
+      "name": "speed_text_color",
+      "type": "fill-color",
+      "element": "cp-speed-text",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": "#00f0ff" },
+        { "at": 100, "value": "#ff00e6", "label": "boost" },
+        { "at": "$max", "value": "#ff2a2a" }
+      ]
+    },
+    {
+      "name": "glitch_a_text",
+      "type": "text",
+      "element": "cp-glitch-a",
+      "variable": "speed",
+      "bind": true
+    },
+    {
+      "name": "glitch_b_text",
+      "type": "text",
+      "element": "cp-glitch-b",
+      "variable": "speed",
+      "bind": true
+    },
+    {
+      "name": "glitch_a_opacity",
+      "type": "opacity",
+      "element": "cp-glitch-a",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0 },
+        { "at": 150, "value": 0, "label": "overdrive" },
+        { "at": "$max", "value": 0.8 }
+      ]
+    },
+    {
+      "name": "glitch_b_opacity",
+      "type": "opacity",
+      "element": "cp-glitch-b",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0 },
+        { "at": 150, "value": 0, "label": "overdrive" },
+        { "at": "$max", "value": 0.7 }
+      ]
+    },
+    {
+      "name": "status_text",
+      "type": "text",
+      "element": "cp-status-text",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": "CRUISE" },
+        { "at": 100, "value": "BOOST", "label": "boost" },
+        { "at": 150, "value": "OVERDRIVE", "label": "overdrive" },
+        { "at": 180, "value": "SYSTEM CRITICAL", "label": "critical" }
+      ]
+    }
+  ]
+}

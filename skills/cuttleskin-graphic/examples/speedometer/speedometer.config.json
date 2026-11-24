@@ -1,0 +1,44 @@
+{
+  "variables": [
+    {
+      "name": "speed",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 200,
+      "defaultValue": 0
+    }
+  ],
+  "transformations": [
+    {
+      "name": "needle_angle",
+      "type": "rotate",
+      "element": "needle",
+      "variable": "speed",
+      "origin": { "x": 150, "y": 150 },
+      "transition": { "duration": 400, "easing": "easeout" },
+      "frames": [
+        { "at": "$min", "value": -120 },
+        { "at": "$max", "value": 120 }
+      ]
+    },
+    {
+      "name": "speed_text",
+      "type": "text",
+      "element": "speed-text",
+      "variable": "speed",
+      "bind": true
+    },
+    {
+      "name": "band_color",
+      "type": "stroke-color",
+      "element": "speed-band",
+      "variable": "speed",
+      "transition": { "duration": 400, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": "#22c55e" },
+        { "at": 100, "value": "#eab308", "label": "medium" },
+        { "at": "$max", "value": "#ef4444" }
+      ]
+    }
+  ]
+}

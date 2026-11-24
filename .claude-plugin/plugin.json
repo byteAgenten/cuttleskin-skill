@@ -1,0 +1,13 @@
+{
+  "name": "cuttleskin-graphic",
+  "description": "Create, edit and validate cuttleskin graphics: animated, data-driven SVGs with a cuttleskin.config.json that binds variables to rotation, position, scale, color, opacity, text and images.",
+  "version": "1.0.0",
+  "author": {
+    "name": "byteAgenten GmbH",
+    "url": "https://cuttleskin.com"
+  },
+  "homepage": "https://cuttleskin.com",
+  "repository": "https://github.com/byteAgenten/cuttleskin-skill",
+  "license": "MIT",
+  "keywords": ["svg", "animation", "gauge", "dashboard", "home-assistant", "cuttleskin"]
+}

@@ -1,0 +1,306 @@
+{
+  "variables": [
+    {
+      "name": "speed",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 200,
+      "defaultValue": 0
+    }
+  ],
+  "transformations": [
+    {
+      "name": "needle_angle",
+      "type": "rotate",
+      "element": "lc-needle",
+      "variable": "speed",
+      "origin": { "x": 250, "y": 165 },
+      "transition": { "duration": 400, "easing": "easeout" },
+      "frames": [
+        { "at": "$min", "value": -120 },
+        { "at": "$max", "value": 120 }
+      ]
+    },
+    {
+      "name": "speed_text",
+      "type": "text",
+      "element": "lc-speed-text",
+      "variable": "speed",
+      "bind": true
+    },
+    {
+      "name": "status_text",
+      "type": "text",
+      "element": "lc-status-text",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": "IMPULSE" },
+        { "at": 100, "value": "WARP" },
+        { "at": 170, "value": "RED ALERT" }
+      ]
+    },
+    {
+      "name": "lc_frame_top_color",
+      "type": "fill-color",
+      "element": "lc-frame-top",
+      "variable": "speed",
+      "transition": { "duration": 400, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": "#cc99cc" },
+        { "at": 100, "value": "#ff9900" },
+        { "at": "$max", "value": "#cc4444" }
+      ]
+    },
+    {
+      "name": "lc_frame_bottom_color",
+      "type": "fill-color",
+      "element": "lc-frame-bottom",
+      "variable": "speed",
+      "transition": { "duration": 400, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": "#cc99cc" },
+        { "at": 100, "value": "#ff9900" },
+        { "at": "$max", "value": "#cc4444" }
+      ]
+    },
+    {
+      "name": "segment_0",
+      "type": "opacity",
+      "element": "lc-seg-0",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 10, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_1",
+      "type": "opacity",
+      "element": "lc-seg-1",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 10, "value": 0.15 },
+        { "at": 20, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_2",
+      "type": "opacity",
+      "element": "lc-seg-2",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 20, "value": 0.15 },
+        { "at": 30, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_3",
+      "type": "opacity",
+      "element": "lc-seg-3",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 30, "value": 0.15 },
+        { "at": 40, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_4",
+      "type": "opacity",
+      "element": "lc-seg-4",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 40, "value": 0.15 },
+        { "at": 50, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_5",
+      "type": "opacity",
+      "element": "lc-seg-5",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 50, "value": 0.15 },
+        { "at": 60, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_6",
+      "type": "opacity",
+      "element": "lc-seg-6",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 60, "value": 0.15 },
+        { "at": 70, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_7",
+      "type": "opacity",
+      "element": "lc-seg-7",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 70, "value": 0.15 },
+        { "at": 80, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_8",
+      "type": "opacity",
+      "element": "lc-seg-8",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 80, "value": 0.15 },
+        { "at": 90, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_9",
+      "type": "opacity",
+      "element": "lc-seg-9",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 90, "value": 0.15 },
+        { "at": 100, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_10",
+      "type": "opacity",
+      "element": "lc-seg-10",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 100, "value": 0.15 },
+        { "at": 110, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_11",
+      "type": "opacity",
+      "element": "lc-seg-11",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 110, "value": 0.15 },
+        { "at": 120, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_12",
+      "type": "opacity",
+      "element": "lc-seg-12",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 120, "value": 0.15 },
+        { "at": 130, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_13",
+      "type": "opacity",
+      "element": "lc-seg-13",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 130, "value": 0.15 },
+        { "at": 140, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_14",
+      "type": "opacity",
+      "element": "lc-seg-14",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 140, "value": 0.15 },
+        { "at": 150, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_15",
+      "type": "opacity",
+      "element": "lc-seg-15",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 150, "value": 0.15 },
+        { "at": 160, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_16",
+      "type": "opacity",
+      "element": "lc-seg-16",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 160, "value": 0.15 },
+        { "at": 170, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_17",
+      "type": "opacity",
+      "element": "lc-seg-17",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 170, "value": 0.15 },
+        { "at": 180, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_18",
+      "type": "opacity",
+      "element": "lc-seg-18",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 180, "value": 0.15 },
+        { "at": 190, "value": 1 }
+      ]
+    },
+    {
+      "name": "segment_19",
+      "type": "opacity",
+      "element": "lc-seg-19",
+      "variable": "speed",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.15 },
+        { "at": 190, "value": 0.15 },
+        { "at": "$max", "value": 1 }
+      ]
+    }
+  ]
+}

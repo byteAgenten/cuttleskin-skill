@@ -1,0 +1,353 @@
+{
+  "variables": [
+    { "name": "stress", "type": "number", "minimum": 0, "maximum": 100, "defaultValue": 15 },
+    { "name": "daylight", "type": "number", "minimum": 0, "maximum": 100, "defaultValue": 70 },
+    { "name": "hunting", "type": "boolean", "defaultValue": false },
+    { "name": "label", "type": "text", "defaultValue": "CPU-LAST" }
+  ],
+  "transformations": [
+    {
+      "name": "mantle_color",
+      "type": "fill-color",
+      "element": "sp-mantle",
+      "variable": "stress",
+      "transition": { "duration": 900, "easing": "easeinout" },
+      "frames": [
+        { "at": "$min", "value": "#57c5b6", "label": "gelassen" },
+        { "at": 35, "value": "#7fae7c", "label": "wachsam" },
+        { "at": 60, "value": "#d39a45", "label": "angespannt" },
+        { "at": 80, "value": "#b2452f", "label": "Drohgebärde" },
+        { "at": "$max", "value": "#5a1222" }
+      ]
+    },
+    {
+      "name": "head_color",
+      "type": "fill-color",
+      "element": "sp-head",
+      "variable": "stress",
+      "transition": { "duration": 900, "easing": "easeinout" },
+      "frames": [
+        { "at": "$min", "value": "#6fd3c3" },
+        { "at": 35, "value": "#93bd8c" },
+        { "at": 60, "value": "#e0ad5c" },
+        { "at": 80, "value": "#c45a40" },
+        { "at": "$max", "value": "#6d1a2b" }
+      ]
+    },
+    {
+      "name": "arms_color",
+      "type": "fill-color",
+      "element": "sp-arms",
+      "variable": "stress",
+      "transition": { "duration": 900, "easing": "easeinout" },
+      "frames": [
+        { "at": "$min", "value": "#6fd3c3" },
+        { "at": 35, "value": "#93bd8c" },
+        { "at": 60, "value": "#e0ad5c" },
+        { "at": 80, "value": "#c45a40" },
+        { "at": "$max", "value": "#6d1a2b" }
+      ]
+    },
+    {
+      "name": "fin_color",
+      "type": "fill-color",
+      "element": "sp-fin",
+      "variable": "stress",
+      "transition": { "duration": 900, "easing": "easeinout" },
+      "frames": [
+        { "at": "$min", "value": "#a8eadf" },
+        { "at": 60, "value": "#f0cf8f" },
+        { "at": 80, "value": "#f08a64" },
+        { "at": "$max", "value": "#e0405a" }
+      ]
+    },
+    {
+      "name": "fin_edge_color",
+      "type": "stroke-color",
+      "element": "sp-fin",
+      "variable": "stress",
+      "transition": { "duration": 900, "easing": "easeinout" },
+      "frames": [
+        { "at": "$min", "value": "#a8eadf" },
+        { "at": 60, "value": "#f5d999" },
+        { "at": "$max", "value": "#ff5a6e" }
+      ]
+    },
+    {
+      "name": "rim_color",
+      "type": "stroke-color",
+      "element": "sp-rim",
+      "variable": "stress",
+      "transition": { "duration": 900, "easing": "easeinout" },
+      "frames": [
+        { "at": "$min", "value": "#c9fff6" },
+        { "at": 60, "value": "#ffe6a8" },
+        { "at": "$max", "value": "#ff8a9a" }
+      ]
+    },
+    {
+      "name": "mottle_fade",
+      "type": "opacity",
+      "element": "sp-mottle",
+      "variable": "stress",
+      "transition": { "duration": 700, "easing": "easeinout" },
+      "frames": [
+        { "at": "$min", "value": 1 },
+        { "at": 50, "value": 0 }
+      ]
+    },
+    {
+      "name": "stripes_appear",
+      "type": "opacity",
+      "element": "sp-stripes",
+      "variable": "stress",
+      "transition": { "duration": 700, "easing": "easeinout" },
+      "frames": [
+        { "at": 35, "value": 0 },
+        { "at": 70, "value": 1 }
+      ]
+    },
+    {
+      "name": "eyespots_appear",
+      "type": "opacity",
+      "element": "sp-eyespots",
+      "variable": "stress",
+      "transition": { "duration": 300, "easing": "easeout" },
+      "frames": [
+        { "at": 80, "value": 0, "label": "Drohgebärde beginnt" },
+        { "at": 90, "value": 1 }
+      ]
+    },
+    {
+      "name": "arms_flare",
+      "type": "scale",
+      "element": "sp-arms",
+      "variable": "stress",
+      "origin": { "x": 300, "y": 262 },
+      "transition": { "duration": 500, "easing": "backout" },
+      "frames": [
+        { "at": 80, "value": { "x": 1, "y": 1 } },
+        { "at": "$max", "value": { "x": 1.08, "y": 1.7 } }
+      ]
+    },
+    {
+      "name": "fin_flare",
+      "type": "scale",
+      "element": "sp-fin",
+      "variable": "stress",
+      "origin": { "x": 472, "y": 260 },
+      "transition": { "duration": 500, "easing": "backout" },
+      "frames": [
+        { "at": 60, "value": { "x": 1, "y": 1 } },
+        { "at": "$max", "value": { "x": 1.04, "y": 1.18 } }
+      ]
+    },
+    {
+      "name": "ink_opacity",
+      "type": "opacity",
+      "element": "sp-ink",
+      "variable": "stress",
+      "transition": { "duration": 1200, "easing": "easeout" },
+      "frames": [
+        { "at": 92, "value": 0, "label": "Tintenalarm" },
+        { "at": "$max", "value": 1 }
+      ]
+    },
+    {
+      "name": "ink_spread",
+      "type": "scale",
+      "element": "sp-ink",
+      "variable": "stress",
+      "origin": { "x": 610, "y": 260 },
+      "transition": { "duration": 1600, "easing": "easeout" },
+      "frames": [
+        { "at": 92, "value": { "x": 0.3, "y": 0.3 } },
+        { "at": "$max", "value": { "x": 1, "y": 1 } }
+      ]
+    },
+    {
+      "name": "bubbles_breathing",
+      "type": "opacity",
+      "element": "sp-bubbles",
+      "variable": "stress",
+      "transition": { "duration": 600, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.2 },
+        { "at": "$max", "value": 0.9 }
+      ]
+    },
+    {
+      "name": "bubbles_rise",
+      "type": "translate",
+      "element": "sp-bubbles",
+      "variable": "stress",
+      "transition": { "duration": 1200, "easing": "easeout" },
+      "frames": [
+        { "at": "$min", "value": { "x": 0, "y": 20 } },
+        { "at": "$max", "value": { "x": 0, "y": -30 } }
+      ]
+    },
+    {
+      "name": "water_color",
+      "type": "fill-color",
+      "element": "sp-water",
+      "variable": "daylight",
+      "transition": { "duration": 1500, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": "#020814", "label": "Nacht" },
+        { "at": 30, "value": "#072a44", "label": "Dämmerung" },
+        { "at": "$max", "value": "#0f7c99" }
+      ]
+    },
+    {
+      "name": "seabed_color",
+      "type": "fill-color",
+      "element": "sp-seabed",
+      "variable": "daylight",
+      "transition": { "duration": 1500, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": "#01060c" },
+        { "at": "$max", "value": "#0a4a4f" }
+      ]
+    },
+    {
+      "name": "rays_opacity",
+      "type": "opacity",
+      "element": "sp-rays",
+      "variable": "daylight",
+      "transition": { "duration": 1500, "easing": "linear" },
+      "frames": [
+        { "at": 20, "value": 0 },
+        { "at": "$max", "value": 0.6 }
+      ]
+    },
+    {
+      "name": "plankton_glow",
+      "type": "opacity",
+      "element": "sp-glow",
+      "variable": "daylight",
+      "transition": { "duration": 1500, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 1 },
+        { "at": 35, "value": 0 }
+      ]
+    },
+    {
+      "name": "pupil_dilation",
+      "type": "scale",
+      "element": "sp-pupil",
+      "variable": "daylight",
+      "origin": { "x": 324, "y": 248 },
+      "transition": { "duration": 800, "easing": "easeinout" },
+      "frames": [
+        { "at": "$min", "value": { "x": 1.15, "y": 2.4 }, "label": "geweitet" },
+        { "at": "$max", "value": { "x": 1, "y": 0.7 }, "label": "schmales W" }
+      ]
+    },
+    {
+      "name": "tentacles_strike",
+      "type": "scale",
+      "element": "sp-tentacles",
+      "variable": "hunting",
+      "origin": { "x": 296, "y": 264 },
+      "transition": { "duration": 350, "easing": "backout" },
+      "frames": [
+        { "at": false, "value": { "x": 0.15, "y": 1 } },
+        { "at": true, "value": { "x": 1, "y": 1 } }
+      ]
+    },
+    {
+      "name": "tentacles_visible",
+      "type": "opacity",
+      "element": "sp-tentacles",
+      "variable": "hunting",
+      "transition": { "duration": 150, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": 0 },
+        { "at": true, "value": 1 }
+      ]
+    },
+    {
+      "name": "prey_visible",
+      "type": "opacity",
+      "element": "sp-prey",
+      "variable": "hunting",
+      "transition": { "duration": 400, "easing": "easeout" },
+      "frames": [
+        { "at": false, "value": 0 },
+        { "at": true, "value": 1 }
+      ]
+    },
+    {
+      "name": "hunt_text",
+      "type": "opacity",
+      "element": "sp-hunt-text",
+      "variable": "hunting",
+      "transition": { "duration": 300, "easing": "easeout" },
+      "frames": [
+        { "at": false, "value": 0 },
+        { "at": true, "value": 1 }
+      ]
+    },
+    {
+      "name": "label_text",
+      "type": "text",
+      "element": "sp-label",
+      "variable": "label",
+      "bind": true
+    },
+    {
+      "name": "stress_value",
+      "type": "text",
+      "element": "sp-value",
+      "variable": "stress",
+      "bind": true
+    },
+    {
+      "name": "daylight_value",
+      "type": "text",
+      "element": "sp-daylight-value",
+      "variable": "daylight",
+      "bind": true
+    },
+    {
+      "name": "mood_text",
+      "type": "text",
+      "element": "sp-mood",
+      "variable": "stress",
+      "frames": [
+        { "at": "$min", "value": "gelassen" },
+        { "at": 35, "value": "wachsam" },
+        { "at": 60, "value": "angespannt" },
+        { "at": 80, "value": "Drohgebärde" },
+        { "at": 92, "value": "Tintenalarm!" }
+      ]
+    },
+    {
+      "name": "bar_length",
+      "type": "scale",
+      "element": "sp-bar",
+      "variable": "stress",
+      "origin": "left",
+      "transition": { "duration": 600, "easing": "easeout" },
+      "frames": [
+        { "at": "$min", "value": { "x": 0.02, "y": 1 } },
+        { "at": "$max", "value": { "x": 1, "y": 1 } }
+      ]
+    },
+    {
+      "name": "bar_color",
+      "type": "fill-color",
+      "element": "sp-bar",
+      "variable": "stress",
+      "transition": { "duration": 900, "easing": "easeinout" },
+      "frames": [
+        { "at": "$min", "value": "#57c5b6" },
+        { "at": 35, "value": "#9fd07c" },
+        { "at": 60, "value": "#f0b04f" },
+        { "at": 80, "value": "#e5553c" },
+        { "at": "$max", "value": "#ff2e55" }
+      ]
+    }
+  ]
+}

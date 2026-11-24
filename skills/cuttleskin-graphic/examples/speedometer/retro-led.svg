@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 170" width="360" height="170">
+  <!-- Retro LED style (1970s/80s dashboard). Classes and IDs use the prefix `rl-`,
+       because styles and filter IDs of inline SVGs are shared by the whole page. -->
+  <defs>
+    <filter id="rl-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <linearGradient id="rl-metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a3a3a" />
+      <stop offset="1" stop-color="#1c1c1c" />
+    </linearGradient>
+  </defs>
+  <style>
+    .rl-panel { fill: url(#rl-metal); stroke: #5a5a5a; stroke-width: 2; }
+    .rl-screw { fill: #777; stroke: #222; stroke-width: 1; }
+    .rl-window { fill: #050505; stroke: #000; stroke-width: 2; }
+    .rl-etched { fill: #9a9a9a; font: 700 10px 'Courier New', monospace; letter-spacing: 3px; }
+    .rl-scale { fill: #8a8a8a; font: 700 9px 'Courier New', monospace; text-anchor: middle; }
+    .rl-led-green { fill: #39ff6a; opacity: 0.12; filter: url(#rl-glow); }
+    .rl-led-yellow { fill: #ffd23f; opacity: 0.12; filter: url(#rl-glow); }
+    .rl-led-red { fill: #ff3b3b; opacity: 0.12; filter: url(#rl-glow); }
+    .rl-ghost { fill: #3a0a0a; font: 700 46px 'Courier New', monospace; text-anchor: end; }
+    .rl-digits { fill: #ff3b3b; font: 700 46px 'Courier New', monospace; text-anchor: end; filter: url(#rl-glow); }
+    .rl-unit { fill: #ff3b3b; font: 700 11px 'Courier New', monospace; letter-spacing: 2px; opacity: 0.8; }
+    .rl-lamp-eco { fill: #39ff6a; filter: url(#rl-glow); }
+    .rl-lamp-over { fill: #ff3b3b; opacity: 0.12; filter: url(#rl-glow); }
+    .rl-lamp-label { fill: #9a9a9a; font: 700 9px 'Courier New', monospace; letter-spacing: 1px; }
+  </style>
+
+  <rect class="rl-panel" x="2" y="2" width="356" height="166" rx="10" />
+  <circle class="rl-screw" cx="14" cy="14" r="4" />
+  <circle class="rl-screw" cx="346" cy="14" r="4" />
+  <circle class="rl-screw" cx="14" cy="156" r="4" />
+  <circle class="rl-screw" cx="346" cy="156" r="4" />
+  <text class="rl-etched" x="26" y="30">SPEED-O-MATIC</text>
+  <text class="rl-etched" x="268" y="30">MODEL 77</text>
+
+  <!-- LED bar: each LED is switched on by cuttleskin once its 10 km/h step is reached -->
+  <rect class="rl-window" x="20" y="40" width="320" height="40" rx="4" />
+  <g id="rl-leds">
+    <rect id="rl-led-0" class="rl-led-green" x="26" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-1" class="rl-led-green" x="41.6" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-2" class="rl-led-green" x="57.2" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-3" class="rl-led-green" x="72.8" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-4" class="rl-led-green" x="88.4" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-5" class="rl-led-green" x="104" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-6" class="rl-led-green" x="119.6" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-7" class="rl-led-green" x="135.2" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-8" class="rl-led-green" x="150.8" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-9" class="rl-led-green" x="166.4" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-10" class="rl-led-green" x="182" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-11" class="rl-led-green" x="197.6" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-12" class="rl-led-yellow" x="213.2" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-13" class="rl-led-yellow" x="228.8" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-14" class="rl-led-yellow" x="244.4" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-15" class="rl-led-yellow" x="260" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-16" class="rl-led-yellow" x="275.6" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-17" class="rl-led-red" x="291.2" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-18" class="rl-led-red" x="306.8" y="46" width="11" height="28" rx="2" />
+    <rect id="rl-led-19" class="rl-led-red" x="322.4" y="46" width="11" height="28" rx="2" />
+  </g>
+  <text class="rl-scale" x="23.7" y="92">0</text>
+  <text class="rl-scale" x="101.7" y="92">50</text>
+  <text class="rl-scale" x="179.7" y="92">100</text>
+  <text class="rl-scale" x="257.7" y="92">150</text>
+  <text class="rl-scale" x="335.7" y="92">200</text>
+
+  <!-- Status lamps: ECO below 60 km/h, OVER from 180 km/h -->
+  <circle id="rl-lamp-eco" class="rl-lamp-eco" cx="34" cy="118" r="6" />
+  <text class="rl-lamp-label" x="46" y="121">ECO</text>
+  <circle id="rl-lamp-over" class="rl-lamp-over" cx="34" cy="144" r="6" />
+  <text class="rl-lamp-label" x="46" y="147">OVER</text>
+
+  <!-- Digital readout with dimmed "888" behind the bound value -->
+  <rect class="rl-window" x="168" y="102" width="172" height="56" rx="4" />
+  <g transform="skewX(-8)">
+    <text class="rl-ghost" x="352" y="148">888</text>
+    <text id="rl-speed-text" class="rl-digits" x="352" y="148">0</text>
+  </g>
+  <text class="rl-unit" x="176" y="120">KM/H</text>
+</svg>

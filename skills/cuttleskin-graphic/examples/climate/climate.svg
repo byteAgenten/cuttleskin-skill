@@ -1,0 +1,219 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Combined temperature and humidity instrument. Classes and IDs use the prefix `cl-`,
+       because styles and filter IDs of inline SVGs are shared by the whole page.
+       Generated: segments are spaced evenly; colors follow the value ramps. -->
+  <defs>
+    <radialGradient id="cl-bg" cx="50%" cy="45%" r="70%">
+      <stop offset="0" stop-color="#0f1b2e" />
+      <stop offset="0.55" stop-color="#070d18" />
+      <stop offset="1" stop-color="#03060b" />
+    </radialGradient>
+
+    <radialGradient id="cl-core" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#14243b" stop-opacity="0.9" />
+      <stop offset="1" stop-color="#060b14" stop-opacity="0.2" />
+    </radialGradient>
+    <linearGradient id="cl-glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+    <filter id="cl-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="cl-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" />
+    </filter>
+    <pattern id="cl-hex" width="18" height="31.18" patternUnits="userSpaceOnUse">
+      <path d="M 9 0 L 18 5.2 L 18 15.59 L 9 20.78 L 0 15.59 L 0 5.2 Z M 9 20.78 V 31.18" fill="none" stroke="#1b2b44" stroke-width="0.6" />
+    </pattern>
+  </defs>
+  <style>
+    .cl-label { fill: #6f86a8; font: 500 8px 'Helvetica Neue', Arial, sans-serif; letter-spacing: 3px; text-anchor: middle; }
+    .cl-hud { fill: #3d5577; font: 500 7px 'Helvetica Neue', Arial, sans-serif; letter-spacing: 2.5px; }
+    .cl-scale { fill: #56708f; font: 400 9px 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; dominant-baseline: middle; }
+    .cl-tick { stroke: #2a3d5a; stroke-width: 1; }
+    .cl-tick-major { stroke: #6f86a8; stroke-width: 1.4; }
+    .cl-value { font: 200 66px 'Helvetica Neue', 'Segoe UI', Arial, sans-serif; text-anchor: middle; letter-spacing: -1px; }
+    .cl-value-small { font: 300 38px 'Helvetica Neue', 'Segoe UI', Arial, sans-serif; text-anchor: middle; }
+    .cl-unit { font-size: 0.36em; font-weight: 400; letter-spacing: 1px; fill: #8aa0bf; }
+    .cl-status { font: 600 8.5px 'Helvetica Neue', Arial, sans-serif; letter-spacing: 3.5px; text-anchor: middle; }
+  </style>
+
+  <!-- Housing -->
+  <rect width="400" height="400" rx="28" fill="url(#cl-bg)" />
+  <rect width="400" height="400" rx="28" fill="url(#cl-hex)" opacity="0.55" />
+  <rect x="0.75" y="0.75" width="398.5" height="398.5" rx="27.5" fill="none" stroke="#1f3150" stroke-width="1.5" />
+  <path d="M 14 40 V 14 H 40 M 360 14 H 386 V 40 M 386 360 V 386 H 360 M 40 386 H 14 V 360" fill="none" stroke="#2ee6ff" stroke-width="1.2" opacity="0.45" />
+  <text x="22" y="30" class="cl-hud">AMBIENT</text>
+  <text x="378" y="30" class="cl-hud" text-anchor="end">CLIMATE·01</text>
+  <text x="22" y="378" class="cl-hud">T/RH</text>
+  <text x="378" y="378" class="cl-hud" text-anchor="end">SENSOR LINK</text>
+
+  <!-- Outer bezel -->
+  <circle cx="200" cy="200" r="198" fill="none" stroke="#132238" stroke-width="1" />
+  <path d="M 200 7 L 200 2 M 210.21 5.27 L 210.36 2.27 M 220.38 6.07 L 220.7 3.08 M 230.5 7.4 L 230.97 4.44 M 240.54 9.26 L 241.17 6.33 M 250.47 11.64 L 251.25 8.75 M 260.26 14.54 L 261.19 11.69 M 269.88 17.95 L 270.96 15.15 M 279.31 21.86 L 280.53 19.12 M 288.53 26.25 L 289.89 23.58 M 296.5 32.86 L 299 28.53 M 306.2 36.46 L 307.84 33.94 M 314.62 42.24 L 316.38 39.81 M 322.72 48.46 L 324.61 46.13 M 330.48 55.09 L 332.49 52.86 M 337.89 62.11 L 340.01 59.99 M 344.91 69.52 L 347.14 67.51 M 351.54 77.28 L 353.87 75.39 M 357.76 85.38 L 360.19 83.62 M 363.54 93.8 L 366.06 92.16 M 367.14 103.5 L 371.47 101 M 373.75 111.47 L 376.42 110.11 M 378.14 120.69 L 380.88 119.47 M 382.05 130.12 L 384.85 129.04 M 385.46 139.74 L 388.31 138.81 M 388.36 149.53 L 391.25 148.75 M 390.74 159.46 L 393.67 158.83 M 392.6 169.5 L 395.56 169.03 M 393.93 179.62 L 396.92 179.3 M 394.73 189.79 L 397.73 189.64 M 393 200 L 398 200 M 394.73 210.21 L 397.73 210.36 M 393.93 220.38 L 396.92 220.7 M 392.6 230.5 L 395.56 230.97 M 390.74 240.54 L 393.67 241.17 M 388.36 250.47 L 391.25 251.25 M 385.46 260.26 L 388.31 261.19 M 382.05 269.88 L 384.85 270.96 M 378.14 279.31 L 380.88 280.53 M 373.75 288.53 L 376.42 289.89 M 367.14 296.5 L 371.47 299 M 363.54 306.2 L 366.06 307.84 M 357.76 314.62 L 360.19 316.38 M 351.54 322.72 L 353.87 324.61 M 344.91 330.48 L 347.14 332.49 M 337.89 337.89 L 340.01 340.01 M 330.48 344.91 L 332.49 347.14 M 322.72 351.54 L 324.61 353.87 M 314.62 357.76 L 316.38 360.19 M 306.2 363.54 L 307.84 366.06 M 296.5 367.14 L 299 371.47 M 288.53 373.75 L 289.89 376.42 M 279.31 378.14 L 280.53 380.88 M 269.88 382.05 L 270.96 384.85 M 260.26 385.46 L 261.19 388.31 M 250.47 388.36 L 251.25 391.25 M 240.54 390.74 L 241.17 393.67 M 230.5 392.6 L 230.97 395.56 M 220.38 393.93 L 220.7 396.92 M 210.21 394.73 L 210.36 397.73 M 200 393 L 200 398 M 189.79 394.73 L 189.64 397.73 M 179.62 393.93 L 179.3 396.92 M 169.5 392.6 L 169.03 395.56 M 159.46 390.74 L 158.83 393.67 M 149.53 388.36 L 148.75 391.25 M 139.74 385.46 L 138.81 388.31 M 130.12 382.05 L 129.04 384.85 M 120.69 378.14 L 119.47 380.88 M 111.47 373.75 L 110.11 376.42 M 103.5 367.14 L 101 371.47 M 93.8 363.54 L 92.16 366.06 M 85.38 357.76 L 83.62 360.19 M 77.28 351.54 L 75.39 353.87 M 69.52 344.91 L 67.51 347.14 M 62.11 337.89 L 59.99 340.01 M 55.09 330.48 L 52.86 332.49 M 48.46 322.72 L 46.13 324.61 M 42.24 314.62 L 39.81 316.38 M 36.46 306.2 L 33.94 307.84 M 32.86 296.5 L 28.53 299 M 26.25 288.53 L 23.58 289.89 M 21.86 279.31 L 19.12 280.53 M 17.95 269.88 L 15.15 270.96 M 14.54 260.26 L 11.69 261.19 M 11.64 250.47 L 8.75 251.25 M 9.26 240.54 L 6.33 241.17 M 7.4 230.5 L 4.44 230.97 M 6.07 220.38 L 3.08 220.7 M 5.27 210.21 L 2.27 210.36 M 7 200 L 2 200 M 5.27 189.79 L 2.27 189.64 M 6.07 179.62 L 3.08 179.3 M 7.4 169.5 L 4.44 169.03 M 9.26 159.46 L 6.33 158.83 M 11.64 149.53 L 8.75 148.75 M 14.54 139.74 L 11.69 138.81 M 17.95 130.12 L 15.15 129.04 M 21.86 120.69 L 19.12 119.47 M 26.25 111.47 L 23.58 110.11 M 32.86 103.5 L 28.53 101 M 36.46 93.8 L 33.94 92.16 M 42.24 85.38 L 39.81 83.62 M 48.46 77.28 L 46.13 75.39 M 55.09 69.52 L 52.86 67.51 M 62.11 62.11 L 59.99 59.99 M 69.52 55.09 L 67.51 52.86 M 77.28 48.46 L 75.39 46.13 M 85.38 42.24 L 83.62 39.81 M 93.8 36.46 L 92.16 33.94 M 103.5 32.86 L 101 28.53 M 111.47 26.25 L 110.11 23.58 M 120.69 21.86 L 119.47 19.12 M 130.12 17.95 L 129.04 15.15 M 139.74 14.54 L 138.81 11.69 M 149.53 11.64 L 148.75 8.75 M 159.46 9.26 L 158.83 6.33 M 169.5 7.4 L 169.03 4.44 M 179.62 6.07 L 179.3 3.08 M 189.79 5.27 L 189.64 2.27" stroke="#2a3d5a" stroke-width="0.8" />
+
+  <!-- Core with ambient halo in the temperature color -->
+  <circle cx="200" cy="200" r="122" fill="url(#cl-core)" />
+  <circle id="cl-halo" cx="200" cy="200" r="108" fill="none" stroke="#71faa4" stroke-width="10" opacity="0.18" filter="url(#cl-soft)" />
+  <circle id="cl-core-ring" cx="200" cy="200" r="118" fill="none" stroke="#71faa4" stroke-width="0.8" opacity="0.6" />
+  <circle cx="200" cy="200" r="146" fill="none" stroke="#1d2e48" stroke-width="0.6" stroke-dasharray="1 3" />
+
+  <!-- Temperature scale -->
+  <g>
+    <line x1="79.08" y1="320.92" x2="73.43" y2="326.57" class="cl-tick-major" />
+    <line x1="63.15" y1="304.2" x2="60.77" y2="306.01" class="cl-tick" />
+    <line x1="50.4" y1="284.88" x2="47.8" y2="286.36" class="cl-tick" />
+    <line x1="40.36" y1="264.03" x2="37.58" y2="265.15" class="cl-tick" />
+    <line x1="33.21" y1="242.03" x2="30.3" y2="242.76" class="cl-tick" />
+    <line x1="30.08" y1="219.15" x2="22.13" y2="220.04" class="cl-tick-major" />
+    <line x1="28.04" y1="196.14" x2="25.04" y2="196.07" class="cl-tick" />
+    <line x1="30.12" y1="173.09" x2="27.15" y2="172.62" class="cl-tick" />
+    <line x1="35.27" y1="150.53" x2="32.39" y2="149.67" class="cl-tick" />
+    <line x1="43.4" y1="128.87" x2="40.67" y2="127.63" class="cl-tick" />
+    <line x1="55.21" y1="109.02" x2="48.44" y2="104.77" class="cl-tick-major" />
+    <line x1="67.97" y1="89.77" x2="65.66" y2="87.85" class="cl-tick" />
+    <line x1="83.96" y1="73.04" x2="81.93" y2="70.83" class="cl-tick" />
+    <line x1="102.05" y1="58.62" x2="100.34" y2="56.15" class="cl-tick" />
+    <line x1="121.91" y1="46.75" x2="120.55" y2="44.07" class="cl-tick" />
+    <line x1="143.52" y1="38.6" x2="140.88" y2="31.04" class="cl-tick-major" />
+    <line x1="165.5" y1="31.5" x2="164.9" y2="28.56" class="cl-tick" />
+    <line x1="188.43" y1="28.39" x2="188.23" y2="25.4" class="cl-tick" />
+    <line x1="211.57" y1="28.39" x2="211.77" y2="25.4" class="cl-tick" />
+    <line x1="234.5" y1="31.5" x2="235.1" y2="28.56" class="cl-tick" />
+    <line x1="256.48" y1="38.6" x2="259.12" y2="31.04" class="cl-tick-major" />
+    <line x1="278.09" y1="46.75" x2="279.45" y2="44.07" class="cl-tick" />
+    <line x1="297.95" y1="58.62" x2="299.66" y2="56.15" class="cl-tick" />
+    <line x1="316.04" y1="73.04" x2="318.07" y2="70.83" class="cl-tick" />
+    <line x1="332.03" y1="89.77" x2="334.34" y2="87.85" class="cl-tick" />
+    <line x1="344.79" y1="109.02" x2="351.56" y2="104.77" class="cl-tick-major" />
+    <line x1="356.6" y1="128.87" x2="359.33" y2="127.63" class="cl-tick" />
+    <line x1="364.73" y1="150.53" x2="367.61" y2="149.67" class="cl-tick" />
+    <line x1="369.88" y1="173.09" x2="372.85" y2="172.62" class="cl-tick" />
+    <line x1="371.96" y1="196.14" x2="374.96" y2="196.07" class="cl-tick" />
+    <line x1="369.92" y1="219.15" x2="377.87" y2="220.04" class="cl-tick-major" />
+    <line x1="366.79" y1="242.03" x2="369.7" y2="242.76" class="cl-tick" />
+    <line x1="359.64" y1="264.03" x2="362.42" y2="265.15" class="cl-tick" />
+    <line x1="349.6" y1="284.88" x2="352.2" y2="286.36" class="cl-tick" />
+    <line x1="336.85" y1="304.2" x2="339.23" y2="306.01" class="cl-tick" />
+    <line x1="320.92" y1="320.92" x2="326.57" y2="326.57" class="cl-tick-major" />
+    <text x="65.65" y="334.35" class="cl-scale">−20</text>
+    <text x="39.12" y="98.91" class="cl-scale">0</text>
+    <text x="262.75" y="20.66" class="cl-scale">20</text>
+    <text x="388.81" y="221.27" class="cl-scale">40</text>
+    <text x="334.35" y="334.35" class="cl-scale">50</text>
+  </g>
+  <text x="115.04" y="304.91" class="cl-scale" font-size="7">0</text>
+  <text x="284.96" y="304.91" class="cl-scale" font-size="7">100</text>
+
+  <!-- Temperature segments: each lights up from its threshold -->
+  <g filter="url(#cl-glow)">
+    <path id="cl-temp-seg-01" d="M 79.56 317.12 A 168 168 0 0 1 67.78 303.64 L 80.37 293.77 A 152 152 0 0 0 91.03 305.97 Z" fill="#4d80ff" />
+    <path id="cl-temp-seg-02" d="M 64.93 299.91 A 168 168 0 0 1 55.05 284.94 L 68.86 276.85 A 152 152 0 0 0 77.8 290.39 Z" fill="#4a8bff" />
+    <path id="cl-temp-seg-03" d="M 52.74 280.86 A 168 168 0 0 1 44.97 264.72 L 59.73 258.56 A 152 152 0 0 0 66.76 273.16 Z" fill="#4796ff" />
+    <path id="cl-temp-seg-04" d="M 43.22 260.37 A 168 168 0 0 1 37.68 243.31 L 53.14 239.19 A 152 152 0 0 0 58.15 254.62 Z" fill="#43a0ff" />
+    <path id="cl-temp-seg-05" d="M 36.53 238.76 A 168 168 0 0 1 33.34 221.14 L 49.21 219.13 A 152 152 0 0 0 52.1 235.07 Z" fill="#40abff" />
+    <path id="cl-temp-seg-06" d="M 32.81 216.48 A 168 168 0 0 1 32.01 198.56 L 48.01 198.7 A 152 152 0 0 0 48.73 214.91 Z" fill="#3db6ff" />
+    <path id="cl-temp-seg-07" d="M 32.11 193.87 A 168 168 0 0 1 33.72 176.04 L 49.55 178.32 A 152 152 0 0 0 48.1 194.46 Z" fill="#3ac1ff" />
+    <path id="cl-temp-seg-08" d="M 34.45 171.4 A 168 168 0 0 1 38.44 153.95 L 53.82 158.33 A 152 152 0 0 0 50.22 174.13 Z" fill="#36cbff" />
+    <path id="cl-temp-seg-09" d="M 39.78 149.45 A 168 168 0 0 1 46.09 132.66 L 60.74 139.07 A 152 152 0 0 0 55.04 154.27 Z" fill="#33d6ff" />
+    <path id="cl-temp-seg-10" d="M 48.03 128.39 A 168 168 0 0 1 56.51 112.62 L 70.18 120.94 A 152 152 0 0 0 62.5 135.21 Z" fill="#30e1ff" />
+    <path id="cl-temp-seg-11" d="M 59.01 108.65 A 168 168 0 0 1 69.55 94.14 L 81.97 104.22 A 152 152 0 0 0 72.44 117.35 Z" fill="#30e7fb" />
+    <path id="cl-temp-seg-12" d="M 72.56 90.54 A 168 168 0 0 1 84.93 77.59 L 95.89 89.25 A 152 152 0 0 0 84.69 100.96 Z" fill="#35eaf3" />
+    <path id="cl-temp-seg-13" d="M 88.39 74.43 A 168 168 0 0 1 102.42 63.25 L 111.71 76.27 A 152 152 0 0 0 99.02 86.39 Z" fill="#3aeceb" />
+    <path id="cl-temp-seg-14" d="M 106.27 60.57 A 168 168 0 0 1 121.65 51.39 L 129.11 65.54 A 152 152 0 0 0 115.2 73.85 Z" fill="#3eefe3" />
+    <path id="cl-temp-seg-15" d="M 125.83 49.26 A 168 168 0 0 1 142.29 42.22 L 147.79 57.25 A 152 152 0 0 0 132.89 63.62 Z" fill="#43f1db" />
+    <path id="cl-temp-seg-16" d="M 146.72 40.67 A 168 168 0 0 1 164.01 35.9 L 167.44 51.53 A 152 152 0 0 0 151.79 55.85 Z" fill="#48f4d4" />
+    <path id="cl-temp-seg-17" d="M 168.61 34.96 A 168 168 0 0 1 186.35 32.56 L 187.65 48.5 A 152 152 0 0 0 171.6 50.68 Z" fill="#4df6cc" />
+    <path id="cl-temp-seg-18" d="M 191.03 32.24 A 168 168 0 0 1 208.97 32.24 L 208.11 48.22 A 152 152 0 0 0 191.89 48.22 Z" fill="#51f9c4" />
+    <path id="cl-temp-seg-19" d="M 213.65 32.56 A 168 168 0 0 1 231.39 34.96 L 228.4 50.68 A 152 152 0 0 0 212.35 48.5 Z" fill="#56fbbc" />
+    <path id="cl-temp-seg-20" d="M 235.99 35.9 A 168 168 0 0 1 253.28 40.67 L 248.21 55.85 A 152 152 0 0 0 232.56 51.53 Z" fill="#5bfeb4" />
+    <path id="cl-temp-seg-21" d="M 257.71 42.22 A 168 168 0 0 1 274.17 49.26 L 267.11 63.62 A 152 152 0 0 0 252.21 57.25 Z" fill="#71faa4" />
+    <path id="cl-temp-seg-22" d="M 278.35 51.39 A 168 168 0 0 1 293.73 60.57 L 284.8 73.85 A 152 152 0 0 0 270.89 65.54 Z" fill="#9aef8b" opacity="0.1" />
+    <path id="cl-temp-seg-23" d="M 297.58 63.25 A 168 168 0 0 1 311.61 74.43 L 300.98 86.39 A 152 152 0 0 0 288.29 76.27 Z" fill="#c2e472" opacity="0.1" />
+    <path id="cl-temp-seg-24" d="M 315.07 77.59 A 168 168 0 0 1 327.44 90.54 L 315.31 100.96 A 152 152 0 0 0 304.11 89.25 Z" fill="#ebd959" opacity="0.1" />
+    <path id="cl-temp-seg-25" d="M 330.45 94.14 A 168 168 0 0 1 340.99 108.65 L 327.56 117.35 A 152 152 0 0 0 318.03 104.22 Z" fill="#ffca4c" opacity="0.1" />
+    <path id="cl-temp-seg-26" d="M 343.49 112.62 A 168 168 0 0 1 351.97 128.39 L 337.5 135.21 A 152 152 0 0 0 329.82 120.94 Z" fill="#ffb949" opacity="0.1" />
+    <path id="cl-temp-seg-27" d="M 353.91 132.66 A 168 168 0 0 1 360.22 149.45 L 344.96 154.27 A 152 152 0 0 0 339.26 139.07 Z" fill="#ffa746" opacity="0.1" />
+    <path id="cl-temp-seg-28" d="M 361.56 153.95 A 168 168 0 0 1 365.55 171.4 L 349.78 174.13 A 152 152 0 0 0 346.18 158.33 Z" fill="#ff9644" opacity="0.1" />
+    <path id="cl-temp-seg-29" d="M 366.28 176.04 A 168 168 0 0 1 367.89 193.87 L 351.9 194.46 A 152 152 0 0 0 350.45 178.32 Z" fill="#ff8441" opacity="0.1" />
+    <path id="cl-temp-seg-30" d="M 367.99 198.56 A 168 168 0 0 1 367.19 216.48 L 351.27 214.91 A 152 152 0 0 0 351.99 198.7 Z" fill="#ff733e" opacity="0.1" />
+    <path id="cl-temp-seg-31" d="M 366.66 221.14 A 168 168 0 0 1 363.47 238.76 L 347.9 235.07 A 152 152 0 0 0 350.79 219.13 Z" fill="#ff6442" opacity="0.1" />
+    <path id="cl-temp-seg-32" d="M 362.32 243.31 A 168 168 0 0 1 356.78 260.37 L 341.85 254.62 A 152 152 0 0 0 346.86 239.19 Z" fill="#ff584c" opacity="0.1" />
+    <path id="cl-temp-seg-33" d="M 355.03 264.72 A 168 168 0 0 1 347.26 280.86 L 333.24 273.16 A 152 152 0 0 0 340.27 258.56 Z" fill="#ff4c56" opacity="0.1" />
+    <path id="cl-temp-seg-34" d="M 344.95 284.94 A 168 168 0 0 1 335.07 299.91 L 322.2 290.39 A 152 152 0 0 0 331.14 276.85 Z" fill="#ff3f60" opacity="0.1" />
+    <path id="cl-temp-seg-35" d="M 332.22 303.64 A 168 168 0 0 1 320.44 317.12 L 308.97 305.97 A 152 152 0 0 0 319.63 293.77 Z" fill="#ff336a" opacity="0.1" />
+  </g>
+
+  <!-- Humidity segments -->
+  <g filter="url(#cl-glow)">
+    <path id="cl-hum-seg-01" d="M 99.8 297.78 A 140 140 0 0 1 91.12 288.01 L 98.9 281.72 A 130 130 0 0 0 106.96 290.79 Z" fill="#f9b74b" />
+    <path id="cl-hum-seg-02" d="M 89 285.32 A 140 140 0 0 1 81.53 274.6 L 89.99 269.27 A 130 130 0 0 0 96.93 279.23 Z" fill="#edbb54" />
+    <path id="cl-hum-seg-03" d="M 79.75 271.69 A 140 140 0 0 1 73.59 260.16 L 82.62 255.86 A 130 130 0 0 0 88.34 266.57 Z" fill="#e1bf5c" />
+    <path id="cl-hum-seg-04" d="M 72.15 257.05 A 140 140 0 0 1 67.39 244.89 L 76.86 241.68 A 130 130 0 0 0 81.29 252.98 Z" fill="#d5c365" />
+    <path id="cl-hum-seg-05" d="M 66.33 241.63 A 140 140 0 0 1 63.03 228.99 L 72.82 226.92 A 130 130 0 0 0 75.88 238.66 Z" fill="#c8c76e" />
+    <path id="cl-hum-seg-06" d="M 62.37 225.63 A 140 140 0 0 1 60.58 212.69 L 70.54 211.78 A 130 130 0 0 0 72.2 223.8 Z" fill="#bccb76" />
+    <path id="cl-hum-seg-07" d="M 60.31 209.28 A 140 140 0 0 1 60.05 196.21 L 70.05 196.48 A 130 130 0 0 0 70.29 208.62 Z" fill="#b0cf7f" />
+    <path id="cl-hum-seg-08" d="M 60.19 192.79 A 140 140 0 0 1 61.47 179.79 L 71.36 181.23 A 130 130 0 0 0 70.17 193.31 Z" fill="#a4d387" />
+    <path id="cl-hum-seg-09" d="M 62 176.41 A 140 140 0 0 1 64.8 163.65 L 74.46 166.24 A 130 130 0 0 0 71.86 178.1 Z" fill="#98d790" />
+    <path id="cl-hum-seg-10" d="M 65.73 160.36 A 140 140 0 0 1 70.01 148.01 L 79.3 151.72 A 130 130 0 0 0 75.32 163.19 Z" fill="#8cdb98" />
+    <path id="cl-hum-seg-11" d="M 71.32 144.85 A 140 140 0 0 1 77.02 133.09 L 85.81 137.87 A 130 130 0 0 0 80.51 148.79 Z" fill="#80dfa1" />
+    <path id="cl-hum-seg-12" d="M 78.7 130.11 A 140 140 0 0 1 85.74 119.1 L 93.9 124.88 A 130 130 0 0 0 87.36 135.1 Z" fill="#74e3a9" />
+    <path id="cl-hum-seg-13" d="M 87.75 116.33 A 140 140 0 0 1 96.04 106.23 L 103.47 112.93 A 130 130 0 0 0 95.77 122.31 Z" fill="#67e7b2" />
+    <path id="cl-hum-seg-14" d="M 98.36 103.72 A 140 140 0 0 1 107.78 94.66 L 114.37 102.19 A 130 130 0 0 0 105.62 110.6 Z" fill="#5bebbb" />
+    <path id="cl-hum-seg-15" d="M 110.38 92.44 A 140 140 0 0 1 120.8 84.55 L 126.46 92.8 A 130 130 0 0 0 116.79 100.12 Z" fill="#4fefc3" />
+    <path id="cl-hum-seg-16" d="M 123.65 82.65 A 140 140 0 0 1 134.92 76.04 L 139.57 84.9 A 130 130 0 0 0 129.1 91.03 Z" fill="#43f3cc" />
+    <path id="cl-hum-seg-17" d="M 137.97 74.49 A 140 140 0 0 1 149.94 69.26 L 153.52 78.59 A 130 130 0 0 0 142.4 83.46 Z" fill="#3df0d3" />
+    <path id="cl-hum-seg-18" d="M 153.15 68.07 A 140 140 0 0 1 165.66 64.28 L 168.11 73.97 A 130 130 0 0 0 156.5 77.49 Z" fill="#3de6d9" />
+    <path id="cl-hum-seg-19" d="M 168.98 63.48 A 140 140 0 0 1 181.85 61.18 L 183.14 71.1 A 130 130 0 0 0 171.2 73.23 Z" fill="#3ddcdf" opacity="0.1" />
+    <path id="cl-hum-seg-20" d="M 185.24 60.78 A 140 140 0 0 1 198.29 60.01 L 198.41 70.01 A 130 130 0 0 0 186.3 70.72 Z" fill="#3dd2e5" opacity="0.1" />
+    <path id="cl-hum-seg-21" d="M 201.71 60.01 A 140 140 0 0 1 214.76 60.78 L 213.7 70.72 A 130 130 0 0 0 201.59 70.01 Z" fill="#3dc8ea" opacity="0.1" />
+    <path id="cl-hum-seg-22" d="M 218.15 61.18 A 140 140 0 0 1 231.02 63.48 L 228.8 73.23 A 130 130 0 0 0 216.86 71.1 Z" fill="#3dbef0" opacity="0.1" />
+    <path id="cl-hum-seg-23" d="M 234.34 64.28 A 140 140 0 0 1 246.85 68.07 L 243.5 77.49 A 130 130 0 0 0 231.89 73.97 Z" fill="#3db4f6" opacity="0.1" />
+    <path id="cl-hum-seg-24" d="M 250.06 69.26 A 140 140 0 0 1 262.03 74.49 L 257.6 83.46 A 130 130 0 0 0 246.48 78.59 Z" fill="#3daafc" opacity="0.1" />
+    <path id="cl-hum-seg-25" d="M 265.08 76.04 A 140 140 0 0 1 276.35 82.65 L 270.9 91.03 A 130 130 0 0 0 260.43 84.9 Z" fill="#3fa3ff" opacity="0.1" />
+    <path id="cl-hum-seg-26" d="M 279.2 84.55 A 140 140 0 0 1 289.62 92.44 L 283.21 100.12 A 130 130 0 0 0 273.54 92.8 Z" fill="#449eff" opacity="0.1" />
+    <path id="cl-hum-seg-27" d="M 292.22 94.66 A 140 140 0 0 1 301.64 103.72 L 294.38 110.6 A 130 130 0 0 0 285.63 102.19 Z" fill="#499aff" opacity="0.1" />
+    <path id="cl-hum-seg-28" d="M 303.96 106.23 A 140 140 0 0 1 312.25 116.33 L 304.23 122.31 A 130 130 0 0 0 296.53 112.93 Z" fill="#4e95ff" opacity="0.1" />
+    <path id="cl-hum-seg-29" d="M 314.26 119.1 A 140 140 0 0 1 321.3 130.11 L 312.64 135.1 A 130 130 0 0 0 306.1 124.88 Z" fill="#5390ff" opacity="0.1" />
+    <path id="cl-hum-seg-30" d="M 322.98 133.09 A 140 140 0 0 1 328.68 144.85 L 319.49 148.79 A 130 130 0 0 0 314.19 137.87 Z" fill="#578cff" opacity="0.1" />
+    <path id="cl-hum-seg-31" d="M 329.99 148.01 A 140 140 0 0 1 334.27 160.36 L 324.68 163.19 A 130 130 0 0 0 320.7 151.72 Z" fill="#5c87ff" opacity="0.1" />
+    <path id="cl-hum-seg-32" d="M 335.2 163.65 A 140 140 0 0 1 338 176.41 L 328.14 178.1 A 130 130 0 0 0 325.54 166.24 Z" fill="#6183ff" opacity="0.1" />
+    <path id="cl-hum-seg-33" d="M 338.53 179.79 A 140 140 0 0 1 339.81 192.79 L 329.83 193.31 A 130 130 0 0 0 328.64 181.23 Z" fill="#667eff" opacity="0.1" />
+    <path id="cl-hum-seg-34" d="M 339.95 196.21 A 140 140 0 0 1 339.69 209.28 L 329.71 208.62 A 130 130 0 0 0 329.95 196.48 Z" fill="#6b7aff" opacity="0.1" />
+    <path id="cl-hum-seg-35" d="M 339.42 212.69 A 140 140 0 0 1 337.63 225.63 L 327.8 223.8 A 130 130 0 0 0 329.46 211.78 Z" fill="#7075ff" opacity="0.1" />
+    <path id="cl-hum-seg-36" d="M 336.97 228.99 A 140 140 0 0 1 333.67 241.63 L 324.12 238.66 A 130 130 0 0 0 327.18 226.92 Z" fill="#7471ff" opacity="0.1" />
+    <path id="cl-hum-seg-37" d="M 332.61 244.89 A 140 140 0 0 1 327.85 257.05 L 318.71 252.98 A 130 130 0 0 0 323.14 241.68 Z" fill="#796cff" opacity="0.1" />
+    <path id="cl-hum-seg-38" d="M 326.41 260.16 A 140 140 0 0 1 320.25 271.69 L 311.66 266.57 A 130 130 0 0 0 317.38 255.86 Z" fill="#7e67ff" opacity="0.1" />
+    <path id="cl-hum-seg-39" d="M 318.47 274.6 A 140 140 0 0 1 311 285.32 L 303.07 279.23 A 130 130 0 0 0 310.01 269.27 Z" fill="#8363ff" opacity="0.1" />
+    <path id="cl-hum-seg-40" d="M 308.88 288.01 A 140 140 0 0 1 300.2 297.78 L 293.04 290.79 A 130 130 0 0 0 301.1 281.72 Z" fill="#885eff" opacity="0.1" />
+  </g>
+
+  <!-- Markers, drawn at the default values -->
+  <g id="cl-temp-marker" filter="url(#cl-glow)">
+    <path id="cl-temp-marker-shape" d="M 266.81 43.68 L 264.57 27.7 L 279.92 34.26 Z" fill="#71faa4" />
+    <circle cx="269.17" cy="38.16" r="1.2" fill="#ffffff" />
+  </g>
+  <g id="cl-hum-marker" filter="url(#cl-glow)">
+    <path id="cl-hum-marker-shape" d="M 170.12 75.54 L 166.38 87.93 L 179.08 84.89 Z" fill="#3de1dc" />
+  </g>
+
+  <!-- Glass highlight -->
+  <path d="M 25.22 136.38 A 186 186 0 0 1 374.78 136.38" fill="none" stroke="url(#cl-glass)" stroke-width="8" stroke-linecap="round" opacity="0.25" />
+
+  <!-- Readouts -->
+  <text x="200" y="124" class="cl-label">TEMPERATUR</text>
+  <text x="200" y="190" class="cl-value" fill="#71faa4" filter="url(#cl-glow)"><tspan id="cl-temp-value">21</tspan><tspan class="cl-unit" dx="4" dy="-28">°C</tspan></text>
+  <text id="cl-temp-status" x="200" y="214" class="cl-status" fill="#5dffb0">ANGENEHM</text>
+
+  <path d="M 150 232 H 188 M 212 232 H 250" stroke="#2a3d5a" stroke-width="0.8" />
+  <circle cx="200" cy="232" r="2" fill="none" stroke="#6f86a8" stroke-width="0.8" />
+
+  <text x="200" y="252" class="cl-label" font-size="7">LUFTFEUCHTE</text>
+  <text x="200" y="290" class="cl-value-small" fill="#3de1dc" filter="url(#cl-glow)"><tspan id="cl-hum-value">45</tspan><tspan class="cl-unit" dx="3" dy="-15">%</tspan></text>
+  <text id="cl-hum-status" x="200" y="306" class="cl-status" font-size="7.5" fill="#3df5d0">OPTIMAL</text>
+</svg>

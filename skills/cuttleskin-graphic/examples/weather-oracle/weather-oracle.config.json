@@ -1,0 +1,298 @@
+{
+  "variables": [
+    {
+      "name": "temperature",
+      "type": "number",
+      "minimum": -20,
+      "maximum": 50,
+      "defaultValue": 21
+    },
+    {
+      "name": "humidity",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "defaultValue": 45
+    },
+    {
+      "name": "brightness",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1000,
+      "defaultValue": 300
+    }
+  ],
+  "transformations": [
+    {
+      "name": "temp_column_height",
+      "type": "scale",
+      "element": "wo-temp-column",
+      "variable": "temperature",
+      "origin": "bottom",
+      "transition": { "duration": 500, "easing": "easeout" },
+      "frames": [
+        {
+          "at": "$min",
+          "value": { "x": 1, "y": 0.1286 }
+        },
+        {
+          "at": "$max",
+          "value": { "x": 1, "y": 1.6163 }
+        }
+      ]
+    },
+    {
+      "name": "temp_column_color",
+      "type": "fill-color",
+      "element": "wo-temp-column",
+      "variable": "temperature",
+      "transition": { "duration": 400, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": "#2f5fa8" },
+        { "at": 0, "value": "#4f9fd0" },
+        { "at": 18, "value": "#d9a521" },
+        { "at": 24, "value": "#e08a1e" },
+        { "at": 30, "value": "#c8461e" },
+        { "at": "$max", "value": "#9e1b1b" }
+      ]
+    },
+    {
+      "name": "temp_bulb_color",
+      "type": "fill-color",
+      "element": "wo-temp-bulb",
+      "variable": "temperature",
+      "transition": { "duration": 400, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": "#2f5fa8" },
+        { "at": 0, "value": "#4f9fd0" },
+        { "at": 18, "value": "#d9a521" },
+        { "at": 24, "value": "#e08a1e" },
+        { "at": 30, "value": "#c8461e" },
+        { "at": "$max", "value": "#9e1b1b" }
+      ]
+    },
+    {
+      "name": "temp_value",
+      "type": "text",
+      "element": "wo-temp-value",
+      "variable": "temperature",
+      "bind": true
+    },
+    {
+      "name": "temp_status",
+      "type": "text",
+      "element": "wo-temp-status",
+      "variable": "temperature",
+      "frames": [
+        { "at": "$min", "value": "eisig" },
+        { "at": 0, "value": "kühl" },
+        { "at": 18, "value": "behaglich" },
+        { "at": 24, "value": "warm" },
+        { "at": 30, "value": "heiß" },
+        { "at": "$max", "value": "heiß" }
+      ]
+    },
+    {
+      "name": "hum_liquid_level",
+      "type": "translate",
+      "element": "wo-hum-liquid",
+      "variable": "humidity",
+      "transition": { "duration": 600, "easing": "easeout" },
+      "frames": [
+        {
+          "at": "$min",
+          "value": { "x": 0, "y": 50.4 }
+        },
+        {
+          "at": "$max",
+          "value": { "x": 0, "y": -61.6 }
+        }
+      ]
+    },
+    {
+      "name": "hum_liquid_color",
+      "type": "fill-color",
+      "element": "wo-hum-liquid",
+      "variable": "humidity",
+      "transition": { "duration": 400, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": "#c98b2b" },
+        { "at": 30, "value": "#a7a03a" },
+        { "at": 45, "value": "#2f9e6e" },
+        { "at": 60, "value": "#2f8a9e" },
+        { "at": "$max", "value": "#2c4fa0" }
+      ]
+    },
+    {
+      "name": "hum_bubbles",
+      "type": "opacity",
+      "element": "wo-hum-bubbles",
+      "variable": "humidity",
+      "transition": { "duration": 400, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0 },
+        { "at": 45, "value": 0.25 },
+        { "at": "$max", "value": 0.9 }
+      ]
+    },
+    {
+      "name": "hum_vapor",
+      "type": "opacity",
+      "element": "wo-hum-vapor",
+      "variable": "humidity",
+      "transition": { "duration": 400, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0 },
+        { "at": 60, "value": 0.15 },
+        { "at": "$max", "value": 0.8 }
+      ]
+    },
+    {
+      "name": "hum_value",
+      "type": "text",
+      "element": "wo-hum-value",
+      "variable": "humidity",
+      "bind": true
+    },
+    {
+      "name": "hum_status",
+      "type": "text",
+      "element": "wo-hum-status",
+      "variable": "humidity",
+      "frames": [
+        { "at": "$min", "value": "staubtrocken" },
+        { "at": 30, "value": "trocken" },
+        { "at": 40, "value": "ausgewogen" },
+        { "at": 60, "value": "feucht" },
+        { "at": 70, "value": "nebelfeucht" },
+        { "at": "$max", "value": "nebelfeucht" }
+      ]
+    },
+    {
+      "name": "light_flame_size",
+      "type": "scale",
+      "element": "wo-light-flame",
+      "variable": "brightness",
+      "origin": "bottom",
+      "transition": { "duration": 400, "easing": "easeout" },
+      "frames": [
+        {
+          "at": "$min",
+          "value": { "x": 0.3, "y": 0.22 }
+        },
+        {
+          "at": 50,
+          "value": { "x": 0.65, "y": 0.6 }
+        },
+        {
+          "at": 150,
+          "value": { "x": 0.85, "y": 0.85 }
+        },
+        {
+          "at": 300,
+          "value": { "x": 1, "y": 1 }
+        },
+        {
+          "at": "$max",
+          "value": { "x": 1.15, "y": 1.3 }
+        }
+      ]
+    },
+    {
+      "name": "light_flame_opacity",
+      "type": "opacity",
+      "element": "wo-light-flame",
+      "variable": "brightness",
+      "transition": { "duration": 400, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.45 },
+        { "at": 50, "value": 0.85 },
+        { "at": 300, "value": 1 },
+        { "at": "$max", "value": 1 }
+      ]
+    },
+    {
+      "name": "light_halo_opacity",
+      "type": "opacity",
+      "element": "wo-light-halo",
+      "variable": "brightness",
+      "transition": { "duration": 400, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0 },
+        { "at": 50, "value": 0.25 },
+        { "at": 300, "value": 0.6 },
+        { "at": "$max", "value": 0.95 }
+      ]
+    },
+    {
+      "name": "light_halo_size",
+      "type": "scale",
+      "element": "wo-light-halo",
+      "variable": "brightness",
+      "origin": "center",
+      "transition": { "duration": 400, "easing": "easeout" },
+      "frames": [
+        {
+          "at": "$min",
+          "value": { "x": 0.5, "y": 0.5 }
+        },
+        {
+          "at": 300,
+          "value": { "x": 1, "y": 1 }
+        },
+        {
+          "at": "$max",
+          "value": { "x": 1.3, "y": 1.3 }
+        }
+      ]
+    },
+    {
+      "name": "light_dim_parchment",
+      "type": "opacity",
+      "element": "wo-dim",
+      "variable": "brightness",
+      "transition": { "duration": 600, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.42 },
+        { "at": 20, "value": 0.32 },
+        { "at": 150, "value": 0.12 },
+        { "at": 300, "value": 0.05 },
+        { "at": "$max", "value": 0 }
+      ]
+    },
+    {
+      "name": "light_stars",
+      "type": "opacity",
+      "element": "wo-stars",
+      "variable": "brightness",
+      "transition": { "duration": 600, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 1 },
+        { "at": 20, "value": 0.9 },
+        { "at": 150, "value": 0.3 },
+        { "at": 300, "value": 0.1 },
+        { "at": "$max", "value": 0 }
+      ]
+    },
+    {
+      "name": "light_value",
+      "type": "text",
+      "element": "wo-light-value",
+      "variable": "brightness",
+      "bind": true
+    },
+    {
+      "name": "light_status",
+      "type": "text",
+      "element": "wo-light-status",
+      "variable": "brightness",
+      "frames": [
+        { "at": "$min", "value": "finster" },
+        { "at": 20, "value": "dämmrig" },
+        { "at": 150, "value": "hell" },
+        { "at": 500, "value": "strahlend" },
+        { "at": "$max", "value": "strahlend" }
+      ]
+    }
+  ]
+}

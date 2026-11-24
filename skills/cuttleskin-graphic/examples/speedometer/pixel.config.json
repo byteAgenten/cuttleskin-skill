@@ -1,0 +1,180 @@
+{
+  "settings": { "imageRendering": "speed" },
+  "variables": [
+    {
+      "name": "speed",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 200,
+      "defaultValue": 0
+    }
+  ],
+  "transformations": [
+    {
+      "name": "car_sprite",
+      "type": "image-url",
+      "element": "px-car",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": "car-slow.png" },
+        { "at": 100, "value": "car-fast.png", "label": "fast" },
+        { "at": 150, "value": "car-turbo.png", "label": "turbo" }
+      ]
+    },
+    {
+      "name": "car_position",
+      "type": "translate",
+      "element": "px-car",
+      "variable": "speed",
+      "transition": { "duration": 300, "easing": "linear" },
+      "frames": [
+        {
+          "at": "$min",
+          "value": { "x": 0, "y": 0 }
+        },
+        {
+          "at": "$max",
+          "value": { "x": 124, "y": 0 }
+        }
+      ]
+    },
+    {
+      "name": "sky_color",
+      "type": "fill-color",
+      "element": "px-sky",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": "#5fcde4" },
+        { "at": 100, "value": "#df7126", "label": "fast" },
+        { "at": "$max", "value": "#45283c" }
+      ]
+    },
+    {
+      "name": "speed_text",
+      "type": "text",
+      "element": "px-speed-text",
+      "variable": "speed",
+      "bind": true
+    },
+    {
+      "name": "status_text",
+      "type": "text",
+      "element": "px-status-text",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": "IDLE" },
+        { "at": 1, "value": "GO!", "label": "go" },
+        { "at": 150, "value": "TURBO!", "label": "turbo" }
+      ]
+    },
+    {
+      "name": "bar_0",
+      "type": "opacity",
+      "element": "px-bar-0",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.2, "easing": "step" },
+        { "at": 20, "value": 1 }
+      ]
+    },
+    {
+      "name": "bar_1",
+      "type": "opacity",
+      "element": "px-bar-1",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.2, "easing": "step" },
+        { "at": 20, "value": 0.2, "easing": "step" },
+        { "at": 40, "value": 1 }
+      ]
+    },
+    {
+      "name": "bar_2",
+      "type": "opacity",
+      "element": "px-bar-2",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.2, "easing": "step" },
+        { "at": 40, "value": 0.2, "easing": "step" },
+        { "at": 60, "value": 1 }
+      ]
+    },
+    {
+      "name": "bar_3",
+      "type": "opacity",
+      "element": "px-bar-3",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.2, "easing": "step" },
+        { "at": 60, "value": 0.2, "easing": "step" },
+        { "at": 80, "value": 1 }
+      ]
+    },
+    {
+      "name": "bar_4",
+      "type": "opacity",
+      "element": "px-bar-4",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.2, "easing": "step" },
+        { "at": 80, "value": 0.2, "easing": "step" },
+        { "at": 100, "value": 1 }
+      ]
+    },
+    {
+      "name": "bar_5",
+      "type": "opacity",
+      "element": "px-bar-5",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.2, "easing": "step" },
+        { "at": 100, "value": 0.2, "easing": "step" },
+        { "at": 120, "value": 1 }
+      ]
+    },
+    {
+      "name": "bar_6",
+      "type": "opacity",
+      "element": "px-bar-6",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.2, "easing": "step" },
+        { "at": 120, "value": 0.2, "easing": "step" },
+        { "at": 140, "value": 1 }
+      ]
+    },
+    {
+      "name": "bar_7",
+      "type": "opacity",
+      "element": "px-bar-7",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.2, "easing": "step" },
+        { "at": 140, "value": 0.2, "easing": "step" },
+        { "at": 160, "value": 1 }
+      ]
+    },
+    {
+      "name": "bar_8",
+      "type": "opacity",
+      "element": "px-bar-8",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.2, "easing": "step" },
+        { "at": 160, "value": 0.2, "easing": "step" },
+        { "at": 180, "value": 1 }
+      ]
+    },
+    {
+      "name": "bar_9",
+      "type": "opacity",
+      "element": "px-bar-9",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.2, "easing": "step" },
+        { "at": 180, "value": 0.2, "easing": "step" },
+        { "at": "$max", "value": 1 }
+      ]
+    }
+  ]
+}

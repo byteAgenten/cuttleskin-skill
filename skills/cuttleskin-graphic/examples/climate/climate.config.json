@@ -1,0 +1,1019 @@
+{
+  "variables": [
+    {
+      "name": "temperature",
+      "type": "number",
+      "minimum": -20,
+      "maximum": 50,
+      "defaultValue": 21
+    },
+    {
+      "name": "humidity",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "defaultValue": 45
+    }
+  ],
+  "transformations": [
+    {
+      "name": "temperature_text",
+      "type": "text",
+      "element": "cl-temp-value",
+      "variable": "temperature",
+      "bind": true
+    },
+    {
+      "name": "humidity_text",
+      "type": "text",
+      "element": "cl-hum-value",
+      "variable": "humidity",
+      "bind": true
+    },
+    {
+      "name": "temperature_marker_angle",
+      "type": "rotate",
+      "element": "cl-temp-marker",
+      "variable": "temperature",
+      "origin": { "x": 200, "y": 200 },
+      "transition": { "duration": 500, "easing": "easeout" },
+      "frames": [
+        { "at": "$min", "value": -158.14 },
+        { "at": "$max", "value": 111.86 }
+      ]
+    },
+    {
+      "name": "humidity_marker_angle",
+      "type": "rotate",
+      "element": "cl-hum-marker",
+      "variable": "humidity",
+      "origin": { "x": 200, "y": 200 },
+      "transition": { "duration": 500, "easing": "easeout" },
+      "frames": [
+        { "at": "$min", "value": -121.5 },
+        { "at": "$max", "value": 148.5 }
+      ]
+    },
+    {
+      "name": "temp_value_color",
+      "type": "fill-color",
+      "element": "cl-temp-value",
+      "variable": "temperature",
+      "transition": { "duration": 300, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": "#4f7bff" },
+        { "at": 0, "value": "#2ee6ff" },
+        { "at": 20, "value": "#5dffb0" },
+        { "at": 28, "value": "#ffd34d" },
+        { "at": 40, "value": "#ff6a3d" },
+        { "at": "$max", "value": "#ff2d6f" }
+      ]
+    },
+    {
+      "name": "temp_marker_shape_color",
+      "type": "fill-color",
+      "element": "cl-temp-marker-shape",
+      "variable": "temperature",
+      "transition": { "duration": 300, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": "#4f7bff" },
+        { "at": 0, "value": "#2ee6ff" },
+        { "at": 20, "value": "#5dffb0" },
+        { "at": 28, "value": "#ffd34d" },
+        { "at": 40, "value": "#ff6a3d" },
+        { "at": "$max", "value": "#ff2d6f" }
+      ]
+    },
+    {
+      "name": "halo_color",
+      "type": "stroke-color",
+      "element": "cl-halo",
+      "variable": "temperature",
+      "transition": { "duration": 300, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": "#4f7bff" },
+        { "at": 0, "value": "#2ee6ff" },
+        { "at": 20, "value": "#5dffb0" },
+        { "at": 28, "value": "#ffd34d" },
+        { "at": 40, "value": "#ff6a3d" },
+        { "at": "$max", "value": "#ff2d6f" }
+      ]
+    },
+    {
+      "name": "core_ring_color",
+      "type": "stroke-color",
+      "element": "cl-core-ring",
+      "variable": "temperature",
+      "transition": { "duration": 300, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": "#4f7bff" },
+        { "at": 0, "value": "#2ee6ff" },
+        { "at": 20, "value": "#5dffb0" },
+        { "at": 28, "value": "#ffd34d" },
+        { "at": 40, "value": "#ff6a3d" },
+        { "at": "$max", "value": "#ff2d6f" }
+      ]
+    },
+    {
+      "name": "hum_value_color",
+      "type": "fill-color",
+      "element": "cl-hum-value",
+      "variable": "humidity",
+      "transition": { "duration": 300, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": "#ffb547" },
+        { "at": 40, "value": "#3df5d0" },
+        { "at": 60, "value": "#3da5ff" },
+        { "at": "$max", "value": "#8a5cff" }
+      ]
+    },
+    {
+      "name": "hum_marker_shape_color",
+      "type": "fill-color",
+      "element": "cl-hum-marker-shape",
+      "variable": "humidity",
+      "transition": { "duration": 300, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": "#ffb547" },
+        { "at": 40, "value": "#3df5d0" },
+        { "at": 60, "value": "#3da5ff" },
+        { "at": "$max", "value": "#8a5cff" }
+      ]
+    },
+    {
+      "name": "temperature_status",
+      "type": "text",
+      "element": "cl-temp-status",
+      "variable": "temperature",
+      "frames": [
+        { "at": "$min", "value": "KALT" },
+        { "at": 16, "value": "KÜHL" },
+        { "at": 20, "value": "ANGENEHM" },
+        { "at": 24, "value": "WARM" },
+        { "at": 28, "value": "HEISS" }
+      ]
+    },
+    {
+      "name": "temperature_status_color",
+      "type": "fill-color",
+      "element": "cl-temp-status",
+      "variable": "temperature",
+      "frames": [
+        { "at": "$min", "value": "#4f7bff", "easing": "step" },
+        { "at": 16, "value": "#2ee6ff", "easing": "step" },
+        { "at": 20, "value": "#5dffb0", "easing": "step" },
+        { "at": 24, "value": "#ffd34d", "easing": "step" },
+        { "at": 28, "value": "#ff6a3d" }
+      ]
+    },
+    {
+      "name": "humidity_status",
+      "type": "text",
+      "element": "cl-hum-status",
+      "variable": "humidity",
+      "frames": [
+        { "at": "$min", "value": "TROCKEN" },
+        { "at": 35, "value": "OPTIMAL" },
+        { "at": 60, "value": "FEUCHT" },
+        { "at": 70, "value": "SEHR FEUCHT" }
+      ]
+    },
+    {
+      "name": "humidity_status_color",
+      "type": "fill-color",
+      "element": "cl-hum-status",
+      "variable": "humidity",
+      "frames": [
+        { "at": "$min", "value": "#ffb547", "easing": "step" },
+        { "at": 35, "value": "#3df5d0", "easing": "step" },
+        { "at": 60, "value": "#3da5ff", "easing": "step" },
+        { "at": 70, "value": "#8a5cff" }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_01",
+      "type": "opacity",
+      "element": "cl-temp-seg-01",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": -19, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_02",
+      "type": "opacity",
+      "element": "cl-temp-seg-02",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": -17, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_03",
+      "type": "opacity",
+      "element": "cl-temp-seg-03",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": -15, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_04",
+      "type": "opacity",
+      "element": "cl-temp-seg-04",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": -13, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_05",
+      "type": "opacity",
+      "element": "cl-temp-seg-05",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": -11, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_06",
+      "type": "opacity",
+      "element": "cl-temp-seg-06",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": -9, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_07",
+      "type": "opacity",
+      "element": "cl-temp-seg-07",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": -7, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_08",
+      "type": "opacity",
+      "element": "cl-temp-seg-08",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": -5, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_09",
+      "type": "opacity",
+      "element": "cl-temp-seg-09",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": -3, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_10",
+      "type": "opacity",
+      "element": "cl-temp-seg-10",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": -1, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_11",
+      "type": "opacity",
+      "element": "cl-temp-seg-11",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 1, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_12",
+      "type": "opacity",
+      "element": "cl-temp-seg-12",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 3, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_13",
+      "type": "opacity",
+      "element": "cl-temp-seg-13",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 5, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_14",
+      "type": "opacity",
+      "element": "cl-temp-seg-14",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 7, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_15",
+      "type": "opacity",
+      "element": "cl-temp-seg-15",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 9, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_16",
+      "type": "opacity",
+      "element": "cl-temp-seg-16",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 11, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_17",
+      "type": "opacity",
+      "element": "cl-temp-seg-17",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 13, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_18",
+      "type": "opacity",
+      "element": "cl-temp-seg-18",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 15, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_19",
+      "type": "opacity",
+      "element": "cl-temp-seg-19",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 17, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_20",
+      "type": "opacity",
+      "element": "cl-temp-seg-20",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 19, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_21",
+      "type": "opacity",
+      "element": "cl-temp-seg-21",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 21, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_22",
+      "type": "opacity",
+      "element": "cl-temp-seg-22",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 23, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_23",
+      "type": "opacity",
+      "element": "cl-temp-seg-23",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 25, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_24",
+      "type": "opacity",
+      "element": "cl-temp-seg-24",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 27, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_25",
+      "type": "opacity",
+      "element": "cl-temp-seg-25",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 29, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_26",
+      "type": "opacity",
+      "element": "cl-temp-seg-26",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 31, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_27",
+      "type": "opacity",
+      "element": "cl-temp-seg-27",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 33, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_28",
+      "type": "opacity",
+      "element": "cl-temp-seg-28",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 35, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_29",
+      "type": "opacity",
+      "element": "cl-temp-seg-29",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 37, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_30",
+      "type": "opacity",
+      "element": "cl-temp-seg-30",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 39, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_31",
+      "type": "opacity",
+      "element": "cl-temp-seg-31",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 41, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_32",
+      "type": "opacity",
+      "element": "cl-temp-seg-32",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 43, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_33",
+      "type": "opacity",
+      "element": "cl-temp-seg-33",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 45, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_34",
+      "type": "opacity",
+      "element": "cl-temp-seg-34",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 47, "value": 1 }
+      ]
+    },
+    {
+      "name": "temp-seg_segment_35",
+      "type": "opacity",
+      "element": "cl-temp-seg-35",
+      "variable": "temperature",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 49, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_01",
+      "type": "opacity",
+      "element": "cl-hum-seg-01",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 1.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_02",
+      "type": "opacity",
+      "element": "cl-hum-seg-02",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 3.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_03",
+      "type": "opacity",
+      "element": "cl-hum-seg-03",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 6.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_04",
+      "type": "opacity",
+      "element": "cl-hum-seg-04",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 8.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_05",
+      "type": "opacity",
+      "element": "cl-hum-seg-05",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 11.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_06",
+      "type": "opacity",
+      "element": "cl-hum-seg-06",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 13.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_07",
+      "type": "opacity",
+      "element": "cl-hum-seg-07",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 16.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_08",
+      "type": "opacity",
+      "element": "cl-hum-seg-08",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 18.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_09",
+      "type": "opacity",
+      "element": "cl-hum-seg-09",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 21.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_10",
+      "type": "opacity",
+      "element": "cl-hum-seg-10",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 23.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_11",
+      "type": "opacity",
+      "element": "cl-hum-seg-11",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 26.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_12",
+      "type": "opacity",
+      "element": "cl-hum-seg-12",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 28.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_13",
+      "type": "opacity",
+      "element": "cl-hum-seg-13",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 31.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_14",
+      "type": "opacity",
+      "element": "cl-hum-seg-14",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 33.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_15",
+      "type": "opacity",
+      "element": "cl-hum-seg-15",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 36.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_16",
+      "type": "opacity",
+      "element": "cl-hum-seg-16",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 38.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_17",
+      "type": "opacity",
+      "element": "cl-hum-seg-17",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 41.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_18",
+      "type": "opacity",
+      "element": "cl-hum-seg-18",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 43.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_19",
+      "type": "opacity",
+      "element": "cl-hum-seg-19",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 46.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_20",
+      "type": "opacity",
+      "element": "cl-hum-seg-20",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 48.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_21",
+      "type": "opacity",
+      "element": "cl-hum-seg-21",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 51.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_22",
+      "type": "opacity",
+      "element": "cl-hum-seg-22",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 53.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_23",
+      "type": "opacity",
+      "element": "cl-hum-seg-23",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 56.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_24",
+      "type": "opacity",
+      "element": "cl-hum-seg-24",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 58.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_25",
+      "type": "opacity",
+      "element": "cl-hum-seg-25",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 61.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_26",
+      "type": "opacity",
+      "element": "cl-hum-seg-26",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 63.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_27",
+      "type": "opacity",
+      "element": "cl-hum-seg-27",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 66.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_28",
+      "type": "opacity",
+      "element": "cl-hum-seg-28",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 68.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_29",
+      "type": "opacity",
+      "element": "cl-hum-seg-29",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 71.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_30",
+      "type": "opacity",
+      "element": "cl-hum-seg-30",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 73.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_31",
+      "type": "opacity",
+      "element": "cl-hum-seg-31",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 76.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_32",
+      "type": "opacity",
+      "element": "cl-hum-seg-32",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 78.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_33",
+      "type": "opacity",
+      "element": "cl-hum-seg-33",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 81.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_34",
+      "type": "opacity",
+      "element": "cl-hum-seg-34",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 83.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_35",
+      "type": "opacity",
+      "element": "cl-hum-seg-35",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 86.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_36",
+      "type": "opacity",
+      "element": "cl-hum-seg-36",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 88.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_37",
+      "type": "opacity",
+      "element": "cl-hum-seg-37",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 91.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_38",
+      "type": "opacity",
+      "element": "cl-hum-seg-38",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 93.75, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_39",
+      "type": "opacity",
+      "element": "cl-hum-seg-39",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 96.25, "value": 1 }
+      ]
+    },
+    {
+      "name": "hum-seg_segment_40",
+      "type": "opacity",
+      "element": "cl-hum-seg-40",
+      "variable": "humidity",
+      "transition": { "duration": 180, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": 0.1, "easing": "step" },
+        { "at": 98.75, "value": 1 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "variables": [
+    {
+      "name": "u1TrainA",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 6,
+      "defaultValue": 1.5
+    },
+    {
+      "name": "u1TrainB",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 6,
+      "defaultValue": 4.6
+    },
+    {
+      "name": "u2Train",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 4,
+      "defaultValue": 2.4
+    },
+    {
+      "name": "u3Train",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 5,
+      "defaultValue": 3.3
+    },
+    { "name": "u2Disrupted", "type": "boolean", "defaultValue": false }
+  ],
+  "transformations": [
+    {
+      "name": "u1_train_a_position",
+      "type": "motion-path",
+      "element": "um-train-u1-a",
+      "variable": "u1TrainA",
+      "path": "um-line-u1",
+      "frames": [
+        { "at": "$min", "value": 0 },
+        { "at": 1, "value": 15.248, "label": "muschelweg" },
+        { "at": 2, "value": 31.882, "label": "hafenmarkt" },
+        { "at": 3, "value": 47.129, "label": "tintenplatz" },
+        { "at": 4, "value": 62.377, "label": "kalmarstrasse" },
+        { "at": 5, "value": 79.109, "label": "sepiapark" },
+        { "at": "$max", "value": 100 }
+      ]
+    },
+    {
+      "name": "u1_train_b_position",
+      "type": "motion-path",
+      "element": "um-train-u1-b",
+      "variable": "u1TrainB",
+      "path": "um-line-u1",
+      "frames": [
+        { "at": "$min", "value": 0 },
+        { "at": 1, "value": 15.248, "label": "muschelweg" },
+        { "at": 2, "value": 31.882, "label": "hafenmarkt" },
+        { "at": 3, "value": 47.129, "label": "tintenplatz" },
+        { "at": 4, "value": 62.377, "label": "kalmarstrasse" },
+        { "at": 5, "value": 79.109, "label": "sepiapark" },
+        { "at": "$max", "value": 100 }
+      ]
+    },
+    {
+      "name": "u2_train_position",
+      "type": "motion-path",
+      "element": "um-train-u2",
+      "variable": "u2Train",
+      "path": "um-line-u2",
+      "frames": [
+        { "at": "$min", "value": 0 },
+        { "at": 1, "value": 30.716, "label": "leuchtturm" },
+        { "at": 2, "value": 50.263, "label": "tintenplatz" },
+        { "at": 3, "value": 67.639, "label": "korallenring" },
+        { "at": "$max", "value": 100 }
+      ]
+    },
+    {
+      "name": "u3_train_position",
+      "type": "motion-path",
+      "element": "um-train-u3",
+      "variable": "u3Train",
+      "path": "um-line-u3",
+      "frames": [
+        { "at": "$min", "value": 0 },
+        { "at": 1, "value": 17.15, "label": "riffstrasse" },
+        { "at": 2, "value": 42.752, "label": "korallenring" },
+        { "at": 3, "value": 68.354, "label": "kalmarstrasse" },
+        { "at": 4, "value": 84.524, "label": "perlenhoehe" },
+        { "at": "$max", "value": 100 }
+      ]
+    },
+    {
+      "name": "u2_line_color",
+      "type": "stroke-color",
+      "element": "um-line-u2",
+      "variable": "u2Disrupted",
+      "frames": [
+        { "at": false, "value": "#2563eb" },
+        { "at": true, "value": "#94a3b8" }
+      ]
+    },
+    {
+      "name": "u2_train_dimmed",
+      "type": "opacity",
+      "element": "um-train-u2",
+      "variable": "u2Disrupted",
+      "frames": [
+        { "at": false, "value": 1 },
+        { "at": true, "value": 0.4 }
+      ]
+    },
+    {
+      "name": "u2_warning",
+      "type": "opacity",
+      "element": "um-u2-warning",
+      "variable": "u2Disrupted",
+      "frames": [
+        { "at": false, "value": 0 },
+        { "at": true, "value": 1 }
+      ]
+    },
+    {
+      "name": "status_dot",
+      "type": "fill-color",
+      "element": "um-status-dot",
+      "variable": "u2Disrupted",
+      "frames": [
+        { "at": false, "value": "#16a34a" },
+        { "at": true, "value": "#f59e0b" }
+      ]
+    },
+    {
+      "name": "status_text",
+      "type": "text",
+      "element": "um-status-text",
+      "variable": "u2Disrupted",
+      "frames": [
+        { "at": false, "value": "Alle Linien in Betrieb" },
+        { "at": true, "value": "U2: Betriebsstörung" }
+      ]
+    }
+  ]
+}

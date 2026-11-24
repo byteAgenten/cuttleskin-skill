@@ -1,0 +1,301 @@
+{
+  "variables": [
+    { "name": "doorFrontLeft", "type": "boolean", "defaultValue": false },
+    { "name": "doorRearLeft", "type": "boolean", "defaultValue": false },
+    { "name": "doorFrontRight", "type": "boolean", "defaultValue": false },
+    { "name": "doorRearRight", "type": "boolean", "defaultValue": false },
+    { "name": "trunk", "type": "boolean", "defaultValue": false },
+    { "name": "seatDriverOccupied", "type": "boolean", "defaultValue": true },
+    { "name": "seatDriverBelted", "type": "boolean", "defaultValue": true },
+    {
+      "name": "seatPassengerOccupied",
+      "type": "boolean",
+      "defaultValue": false
+    },
+    { "name": "seatPassengerBelted", "type": "boolean", "defaultValue": false },
+    { "name": "seatRearLeftOccupied", "type": "boolean", "defaultValue": false },
+    { "name": "seatRearLeftBelted", "type": "boolean", "defaultValue": false },
+    {
+      "name": "seatRearMiddleOccupied",
+      "type": "boolean",
+      "defaultValue": false
+    },
+    { "name": "seatRearMiddleBelted", "type": "boolean", "defaultValue": false },
+    {
+      "name": "seatRearRightOccupied",
+      "type": "boolean",
+      "defaultValue": false
+    },
+    { "name": "seatRearRightBelted", "type": "boolean", "defaultValue": false }
+  ],
+  "transformations": [
+    {
+      "name": "door_fl_angle",
+      "type": "rotate",
+      "element": "car-door-fl",
+      "variable": "doorFrontLeft",
+      "origin": { "x": 71, "y": 151 },
+      "transition": { "duration": 450, "easing": "easeout" },
+      "frames": [
+        { "at": false, "value": 0 },
+        { "at": true, "value": 60 }
+      ]
+    },
+    {
+      "name": "door_fl_color",
+      "type": "fill-color",
+      "element": "car-door-fl-panel",
+      "variable": "doorFrontLeft",
+      "transition": { "duration": 200, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": "#e2e8f0" },
+        { "at": true, "value": "#fb923c" }
+      ]
+    },
+    {
+      "name": "door_rl_angle",
+      "type": "rotate",
+      "element": "car-door-rl",
+      "variable": "doorRearLeft",
+      "origin": { "x": 71, "y": 251 },
+      "transition": { "duration": 450, "easing": "easeout" },
+      "frames": [
+        { "at": false, "value": 0 },
+        { "at": true, "value": 60 }
+      ]
+    },
+    {
+      "name": "door_rl_color",
+      "type": "fill-color",
+      "element": "car-door-rl-panel",
+      "variable": "doorRearLeft",
+      "transition": { "duration": 200, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": "#e2e8f0" },
+        { "at": true, "value": "#fb923c" }
+      ]
+    },
+    {
+      "name": "door_fr_angle",
+      "type": "rotate",
+      "element": "car-door-fr",
+      "variable": "doorFrontRight",
+      "origin": { "x": 229, "y": 151 },
+      "transition": { "duration": 450, "easing": "easeout" },
+      "frames": [
+        { "at": false, "value": 0 },
+        { "at": true, "value": -60 }
+      ]
+    },
+    {
+      "name": "door_fr_color",
+      "type": "fill-color",
+      "element": "car-door-fr-panel",
+      "variable": "doorFrontRight",
+      "transition": { "duration": 200, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": "#e2e8f0" },
+        { "at": true, "value": "#fb923c" }
+      ]
+    },
+    {
+      "name": "door_rr_angle",
+      "type": "rotate",
+      "element": "car-door-rr",
+      "variable": "doorRearRight",
+      "origin": { "x": 229, "y": 251 },
+      "transition": { "duration": 450, "easing": "easeout" },
+      "frames": [
+        { "at": false, "value": 0 },
+        { "at": true, "value": -60 }
+      ]
+    },
+    {
+      "name": "door_rr_color",
+      "type": "fill-color",
+      "element": "car-door-rr-panel",
+      "variable": "doorRearRight",
+      "transition": { "duration": 200, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": "#e2e8f0" },
+        { "at": true, "value": "#fb923c" }
+      ]
+    },
+    {
+      "name": "trunk_color",
+      "type": "fill-color",
+      "element": "car-trunk",
+      "variable": "trunk",
+      "transition": { "duration": 200, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": "#e2e8f0" },
+        { "at": true, "value": "#fb923c" }
+      ]
+    },
+    {
+      "name": "person_dr_visible",
+      "type": "opacity",
+      "element": "car-person-dr",
+      "variable": "seatDriverOccupied",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": 0 },
+        { "at": true, "value": 1 }
+      ]
+    },
+    {
+      "name": "person_dr_color",
+      "type": "fill-color",
+      "element": "car-person-dr",
+      "variable": "seatDriverBelted",
+      "transition": { "duration": 200, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": "#dc2626" },
+        { "at": true, "value": "#16a34a" }
+      ]
+    },
+    {
+      "name": "belt_dr_visible",
+      "type": "opacity",
+      "element": "car-belt-dr",
+      "variable": "seatDriverBelted",
+      "transition": { "duration": 200, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": 0 },
+        { "at": true, "value": 1 }
+      ]
+    },
+    {
+      "name": "person_pa_visible",
+      "type": "opacity",
+      "element": "car-person-pa",
+      "variable": "seatPassengerOccupied",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": 0 },
+        { "at": true, "value": 1 }
+      ]
+    },
+    {
+      "name": "person_pa_color",
+      "type": "fill-color",
+      "element": "car-person-pa",
+      "variable": "seatPassengerBelted",
+      "transition": { "duration": 200, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": "#dc2626" },
+        { "at": true, "value": "#16a34a" }
+      ]
+    },
+    {
+      "name": "belt_pa_visible",
+      "type": "opacity",
+      "element": "car-belt-pa",
+      "variable": "seatPassengerBelted",
+      "transition": { "duration": 200, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": 0 },
+        { "at": true, "value": 1 }
+      ]
+    },
+    {
+      "name": "person_rl_visible",
+      "type": "opacity",
+      "element": "car-person-rl",
+      "variable": "seatRearLeftOccupied",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": 0 },
+        { "at": true, "value": 1 }
+      ]
+    },
+    {
+      "name": "person_rl_color",
+      "type": "fill-color",
+      "element": "car-person-rl",
+      "variable": "seatRearLeftBelted",
+      "transition": { "duration": 200, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": "#dc2626" },
+        { "at": true, "value": "#16a34a" }
+      ]
+    },
+    {
+      "name": "belt_rl_visible",
+      "type": "opacity",
+      "element": "car-belt-rl",
+      "variable": "seatRearLeftBelted",
+      "transition": { "duration": 200, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": 0 },
+        { "at": true, "value": 1 }
+      ]
+    },
+    {
+      "name": "person_rm_visible",
+      "type": "opacity",
+      "element": "car-person-rm",
+      "variable": "seatRearMiddleOccupied",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": 0 },
+        { "at": true, "value": 1 }
+      ]
+    },
+    {
+      "name": "person_rm_color",
+      "type": "fill-color",
+      "element": "car-person-rm",
+      "variable": "seatRearMiddleBelted",
+      "transition": { "duration": 200, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": "#dc2626" },
+        { "at": true, "value": "#16a34a" }
+      ]
+    },
+    {
+      "name": "belt_rm_visible",
+      "type": "opacity",
+      "element": "car-belt-rm",
+      "variable": "seatRearMiddleBelted",
+      "transition": { "duration": 200, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": 0 },
+        { "at": true, "value": 1 }
+      ]
+    },
+    {
+      "name": "person_rr_visible",
+      "type": "opacity",
+      "element": "car-person-rr",
+      "variable": "seatRearRightOccupied",
+      "transition": { "duration": 250, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": 0 },
+        { "at": true, "value": 1 }
+      ]
+    },
+    {
+      "name": "person_rr_color",
+      "type": "fill-color",
+      "element": "car-person-rr",
+      "variable": "seatRearRightBelted",
+      "transition": { "duration": 200, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": "#dc2626" },
+        { "at": true, "value": "#16a34a" }
+      ]
+    },
+    {
+      "name": "belt_rr_visible",
+      "type": "opacity",
+      "element": "car-belt-rr",
+      "variable": "seatRearRightBelted",
+      "transition": { "duration": 200, "easing": "linear" },
+      "frames": [
+        { "at": false, "value": 0 },
+        { "at": true, "value": 1 }
+      ]
+    }
+  ]
+}

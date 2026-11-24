@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" width="160" height="120" shape-rendering="crispEdges">
+  <!-- Pixel art style on a 160x120 grid. Classes and IDs use the prefix `px-`,
+       because styles of inline SVGs apply to the whole page. -->
+  <style>
+    .px-sky { fill: #5fcde4; }
+    .px-mountain { fill: #3f3f74; }
+    .px-mountain-far { fill: #595652; }
+    .px-road { fill: #323c39; }
+    .px-curb { fill: #847e87; }
+    .px-stripe { fill: #fbf236; }
+    .px-panel { fill: #222034; }
+    .px-frame { fill: none; stroke: #000; stroke-width: 2; }
+    .px-bar-green { fill: #6abe30; opacity: 0.2; }
+    .px-bar-yellow { fill: #fbf236; opacity: 0.2; }
+    .px-bar-red { fill: #d95763; opacity: 0.2; }
+    .px-text { fill: #ffffff; font: 400 8px 'Press Start 2P', monospace; }
+    .px-label { fill: #9badb7; font: 400 6px 'Press Start 2P', monospace; }
+    .px-status { fill: #fbf236; font: 400 7px 'Press Start 2P', monospace; text-anchor: end; }
+  </style>
+
+  <!-- Scenery: the sky color changes from day to dusk with speed -->
+  <rect id="px-sky" class="px-sky" x="0" y="0" width="160" height="72" />
+  <polygon class="px-mountain-far" points="0,72 0,52 12,40 22,48 34,34 48,50 60,44 72,58 80,72" />
+  <polygon class="px-mountain" points="60,72 76,50 88,58 104,36 118,52 128,46 144,60 160,48 160,72" />
+
+  <rect class="px-curb" x="0" y="70" width="160" height="2" />
+  <rect class="px-road" x="0" y="72" width="160" height="26" />
+  <rect class="px-curb" x="0" y="96" width="160" height="2" />
+  <g>
+    <rect class="px-stripe" x="4" y="84" width="10" height="2" />
+    <rect class="px-stripe" x="28" y="84" width="10" height="2" />
+    <rect class="px-stripe" x="52" y="84" width="10" height="2" />
+    <rect class="px-stripe" x="76" y="84" width="10" height="2" />
+    <rect class="px-stripe" x="100" y="84" width="10" height="2" />
+    <rect class="px-stripe" x="124" y="84" width="10" height="2" />
+    <rect class="px-stripe" x="148" y="84" width="10" height="2" />
+  </g>
+
+  <!-- Car sprite: cuttleskin swaps the image (image-url) and moves it along the road (translate) -->
+  <image id="px-car" href="car-slow.png" x="0" y="76" width="32" height="10" />
+
+  <!-- HUD -->
+  <text class="px-label" x="4" y="10">SPEED</text>
+  <text id="px-status-text" class="px-status" x="156" y="11">IDLE</text>
+
+  <rect class="px-panel" x="0" y="98" width="160" height="22" />
+  <g id="px-bar">
+    <rect id="px-bar-0" class="px-bar-green" x="6" y="104" width="7" height="10" />
+    <rect id="px-bar-1" class="px-bar-green" x="15" y="104" width="7" height="10" />
+    <rect id="px-bar-2" class="px-bar-green" x="24" y="104" width="7" height="10" />
+    <rect id="px-bar-3" class="px-bar-green" x="33" y="104" width="7" height="10" />
+    <rect id="px-bar-4" class="px-bar-green" x="42" y="104" width="7" height="10" />
+    <rect id="px-bar-5" class="px-bar-green" x="51" y="104" width="7" height="10" />
+    <rect id="px-bar-6" class="px-bar-yellow" x="60" y="104" width="7" height="10" />
+    <rect id="px-bar-7" class="px-bar-yellow" x="69" y="104" width="7" height="10" />
+    <rect id="px-bar-8" class="px-bar-red" x="78" y="104" width="7" height="10" />
+    <rect id="px-bar-9" class="px-bar-red" x="87" y="104" width="7" height="10" />
+  </g>
+  <text id="px-speed-text" class="px-text" x="128" y="113" text-anchor="end">0</text>
+  <text class="px-label" x="131" y="113">KMH</text>
+  <rect class="px-frame" x="1" y="1" width="158" height="118" />
+</svg>

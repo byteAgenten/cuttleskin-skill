@@ -1,0 +1,221 @@
+{
+  "variables": [
+    {
+      "name": "hour",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 24,
+      "defaultValue": 10
+    },
+    {
+      "name": "minute",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 60,
+      "defaultValue": 9
+    },
+    {
+      "name": "second",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 60,
+      "defaultValue": 36
+    },
+    {
+      "name": "day",
+      "type": "number",
+      "minimum": 1,
+      "maximum": 31,
+      "defaultValue": 24
+    }
+  ],
+  "transformations": [
+    {
+      "name": "hour_hand",
+      "type": "rotate",
+      "element": "ch-hand-hour",
+      "variable": "hour",
+      "origin": {
+        "x": 500,
+        "y": 500
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 0
+        },
+        {
+          "at": "$max",
+          "value": 720
+        }
+      ]
+    },
+    {
+      "name": "hour_hand_minutes",
+      "type": "rotate",
+      "element": "ch-hand-hour",
+      "variable": "minute",
+      "origin": {
+        "x": 500,
+        "y": 500
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 0
+        },
+        {
+          "at": "$max",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "name": "minute_hand",
+      "type": "rotate",
+      "element": "ch-hand-minute",
+      "variable": "minute",
+      "origin": {
+        "x": 500,
+        "y": 500
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 0
+        },
+        {
+          "at": "$max",
+          "value": 360
+        }
+      ]
+    },
+    {
+      "name": "minute_hand_seconds",
+      "type": "rotate",
+      "element": "ch-hand-minute",
+      "variable": "second",
+      "origin": {
+        "x": 500,
+        "y": 500
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 0
+        },
+        {
+          "at": "$max",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "name": "second_hand",
+      "type": "rotate",
+      "element": "ch-hand-second",
+      "variable": "second",
+      "origin": {
+        "x": 500,
+        "y": 500
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 0
+        },
+        {
+          "at": "$max",
+          "value": 360
+        }
+      ]
+    },
+    {
+      "name": "sub_hours",
+      "type": "rotate",
+      "element": "ch-sub-hours",
+      "variable": "hour",
+      "origin": {
+        "x": 500,
+        "y": 348
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 0
+        },
+        {
+          "at": "$max",
+          "value": 360
+        }
+      ]
+    },
+    {
+      "name": "sub_hours_minutes",
+      "type": "rotate",
+      "element": "ch-sub-hours",
+      "variable": "minute",
+      "origin": {
+        "x": 500,
+        "y": 348
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 0
+        },
+        {
+          "at": "$max",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "name": "sub_seconds",
+      "type": "rotate",
+      "element": "ch-sub-seconds",
+      "variable": "second",
+      "origin": {
+        "x": 348,
+        "y": 500
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 0
+        },
+        {
+          "at": "$max",
+          "value": 360
+        }
+      ]
+    },
+    {
+      "name": "sub_minutes",
+      "type": "rotate",
+      "element": "ch-sub-minutes",
+      "variable": "minute",
+      "origin": {
+        "x": 500,
+        "y": 652
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 0
+        },
+        {
+          "at": "$max",
+          "value": 360
+        }
+      ]
+    },
+    {
+      "name": "date",
+      "type": "text",
+      "element": "ch-date",
+      "variable": "day",
+      "bind": true
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "variables": [
+    {
+      "name": "speed",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 200,
+      "defaultValue": 0
+    }
+  ],
+  "transformations": [
+    {
+      "name": "needle_angle",
+      "type": "rotate",
+      "element": "cm-needle",
+      "variable": "speed",
+      "origin": { "x": 150, "y": 190 },
+      "transition": { "duration": 900, "easing": "elastic" },
+      "frames": [
+        { "at": "$min", "value": -120 },
+        { "at": "$max", "value": 120 }
+      ]
+    },
+    {
+      "name": "speed_text",
+      "type": "text",
+      "element": "cm-speed-text",
+      "variable": "speed",
+      "bind": true
+    },
+    {
+      "name": "bubble_text",
+      "type": "text",
+      "element": "cm-bubble-text",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": "Gemütlich…" },
+        { "at": 60, "value": "Läuft!", "label": "rolling" },
+        { "at": 120, "value": "Zügig!", "label": "fast" },
+        { "at": 170, "value": "WAHNSINN!", "label": "crazy" }
+      ]
+    },
+    {
+      "name": "bubble_color",
+      "type": "fill-color",
+      "element": "cm-bubble",
+      "variable": "speed",
+      "transition": { "duration": 300, "easing": "linear" },
+      "frames": [
+        { "at": "$min", "value": "#ffffff" },
+        { "at": 120, "value": "#fef08a", "label": "fast" },
+        { "at": "$max", "value": "#fca5a5" }
+      ]
+    },
+    {
+      "name": "speedlines_opacity",
+      "type": "opacity",
+      "element": "cm-speedlines",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0 },
+        { "at": 80, "value": 0, "label": "moving" },
+        { "at": 120, "value": 1, "label": "fast" }
+      ]
+    },
+    {
+      "name": "burst_opacity",
+      "type": "opacity",
+      "element": "cm-burst",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0 },
+        { "at": 160, "value": 0, "label": "burst" },
+        { "at": 170, "value": 1, "label": "crazy" }
+      ]
+    },
+    {
+      "name": "burst_scale",
+      "type": "scale",
+      "element": "cm-burst",
+      "variable": "speed",
+      "origin": "center",
+      "transition": { "duration": 500, "easing": "backout" },
+      "frames": [
+        {
+          "at": "$min",
+          "value": { "x": 0.4, "y": 0.4 }
+        },
+        {
+          "at": 160,
+          "value": { "x": 0.4, "y": 0.4 },
+          "label": "burst"
+        },
+        {
+          "at": "$max",
+          "value": { "x": 1.1, "y": 1.1 }
+        }
+      ]
+    }
+  ]
+}

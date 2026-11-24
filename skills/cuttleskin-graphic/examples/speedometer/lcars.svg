@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" width="420" height="300">
+  <!-- Sci-fi console style inspired by LCARS. All classes and IDs use the prefix `lc-`,
+       because styles of inline SVGs apply to the whole page. -->
+  <style>
+    .lc-bg { fill: #000; }
+    .lc-frame { fill: #cc99cc; }
+    .lc-block-a { fill: #9999ff; }
+    .lc-block-b { fill: #ffcc99; }
+    .lc-block-c { fill: #ff9900; }
+    .lc-block-d { fill: #cc6666; }
+    .lc-label {
+      fill: #000;
+      font: 700 13px Antonio, 'Arial Narrow', sans-serif;
+      letter-spacing: 1px;
+      text-anchor: end;
+    }
+    .lc-title {
+      fill: #ff9900;
+      font: 700 20px Antonio, 'Arial Narrow', sans-serif;
+      letter-spacing: 3px;
+      text-anchor: end;
+    }
+    .lc-seg-cool { fill: #9999ff; }
+    .lc-seg-warm { fill: #ff9900; }
+    .lc-seg-hot { fill: #cc4444; }
+    .lc-scale {
+      fill: #ffcc99;
+      font: 400 12px Antonio, 'Arial Narrow', sans-serif;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+    .lc-needle { fill: #ffcc99; }
+    .lc-hub { fill: #ff9900; }
+    .lc-hub-core { fill: #000; }
+    .lc-readout {
+      fill: #ffcc99;
+      font: 700 44px Antonio, 'Arial Narrow', sans-serif;
+      text-anchor: end;
+    }
+    .lc-unit {
+      fill: #9999ff;
+      font: 400 13px Antonio, 'Arial Narrow', sans-serif;
+      letter-spacing: 2px;
+    }
+    .lc-status {
+      fill: #ff9900;
+      font: 700 15px Antonio, 'Arial Narrow', sans-serif;
+      letter-spacing: 4px;
+      text-anchor: middle;
+    }
+  </style>
+
+  <rect class="lc-bg" x="0" y="0" width="420" height="300" rx="12" />
+
+  <!-- Frame: elbows change color with speed (lavender, orange, red alert) -->
+  <path
+    id="lc-frame-top"
+    class="lc-frame"
+    d="M 10 125 V 50 A 40 40 0 0 1 50 10 H 290 V 34 H 100 A 20 20 0 0 0 80 54 V 125 Z"
+  />
+  <path
+    id="lc-frame-bottom"
+    class="lc-frame"
+    d="M 10 175 V 250 A 40 40 0 0 0 50 290 H 290 V 266 H 100 A 20 20 0 0 1 80 246 V 175 Z"
+  />
+  <rect class="lc-block-a" x="10" y="131" width="70" height="38" />
+  <text class="lc-label" x="74" y="120">SPD-01</text>
+  <text class="lc-label" x="74" y="164">47-200</text>
+  <text class="lc-label" x="74" y="196">NAV</text>
+
+  <!-- Top and bottom bar segments with rounded end caps -->
+  <rect class="lc-block-b" x="296" y="10" width="40" height="24" />
+  <path class="lc-block-c" d="M 342 10 H 398 A 12 12 0 0 1 398 34 H 342 Z" />
+  <rect class="lc-block-d" x="296" y="266" width="60" height="24" />
+  <path class="lc-block-b" d="M 362 266 H 398 A 12 12 0 0 1 398 290 H 362 Z" />
+  <text class="lc-title" x="408" y="58">VELOCITY</text>
+
+  <!-- Gauge: 20 segments of 10 km/h each, lit up by cuttleskin via opacity -->
+  <g id="lc-segments">
+    <path
+      id="lc-seg-0"
+      class="lc-seg-cool"
+      d="M 152.04 219.3 A 112 112 0 0 1 144.1 201.46 L 163.01 194.95 A 92 92 0 0 0 169.53 209.6 Z"
+    />
+    <path
+      id="lc-seg-1"
+      class="lc-seg-cool"
+      d="M 142.89 197.75 A 112 112 0 0 1 138.83 178.65 L 158.69 176.21 A 92 92 0 0 0 162.02 191.9 Z"
+    />
+    <path
+      id="lc-seg-2"
+      class="lc-seg-cool"
+      d="M 138.43 174.76 A 112 112 0 0 1 138.43 155.24 L 158.35 156.98 A 92 92 0 0 0 158.35 173.02 Z"
+    />
+    <path
+      id="lc-seg-3"
+      class="lc-seg-cool"
+      d="M 138.83 151.35 A 112 112 0 0 1 142.89 132.25 L 162.02 138.1 A 92 92 0 0 0 158.69 153.79 Z"
+    />
+    <path
+      id="lc-seg-4"
+      class="lc-seg-cool"
+      d="M 144.1 128.54 A 112 112 0 0 1 152.04 110.7 L 169.53 120.4 A 92 92 0 0 0 163.01 135.05 Z"
+    />
+    <path
+      id="lc-seg-5"
+      class="lc-seg-cool"
+      d="M 154 107.32 A 112 112 0 0 1 165.47 91.52 L 180.57 104.64 A 92 92 0 0 0 171.14 117.62 Z"
+    />
+    <path
+      id="lc-seg-6"
+      class="lc-seg-cool"
+      d="M 168.09 88.62 A 112 112 0 0 1 182.6 75.55 L 194.63 91.53 A 92 92 0 0 0 182.72 102.26 Z"
+    />
+    <path
+      id="lc-seg-7"
+      class="lc-seg-cool"
+      d="M 185.76 73.25 A 112 112 0 0 1 202.67 63.49 L 211.12 81.62 A 92 92 0 0 0 197.23 89.64 Z"
+    />
+    <path
+      id="lc-seg-8"
+      class="lc-seg-cool"
+      d="M 206.24 61.9 A 112 112 0 0 1 224.81 55.87 L 229.3 75.36 A 92 92 0 0 0 214.05 80.31 Z"
+    />
+    <path
+      id="lc-seg-9"
+      class="lc-seg-cool"
+      d="M 228.63 55.06 A 112 112 0 0 1 248.05 53.02 L 248.39 73.01 A 92 92 0 0 0 232.45 74.69 Z"
+    />
+    <path
+      id="lc-seg-10"
+      class="lc-seg-warm"
+      d="M 251.95 53.02 A 112 112 0 0 1 271.37 55.06 L 267.55 74.69 A 92 92 0 0 0 251.61 73.01 Z"
+    />
+    <path
+      id="lc-seg-11"
+      class="lc-seg-warm"
+      d="M 275.19 55.87 A 112 112 0 0 1 293.76 61.9 L 285.95 80.31 A 92 92 0 0 0 270.7 75.36 Z"
+    />
+    <path
+      id="lc-seg-12"
+      class="lc-seg-warm"
+      d="M 297.33 63.49 A 112 112 0 0 1 314.24 73.25 L 302.77 89.64 A 92 92 0 0 0 288.88 81.62 Z"
+    />
+    <path
+      id="lc-seg-13"
+      class="lc-seg-warm"
+      d="M 317.4 75.55 A 112 112 0 0 1 331.91 88.62 L 317.28 102.26 A 92 92 0 0 0 305.37 91.53 Z"
+    />
+    <path
+      id="lc-seg-14"
+      class="lc-seg-warm"
+      d="M 334.53 91.52 A 112 112 0 0 1 346 107.32 L 328.86 117.62 A 92 92 0 0 0 319.43 104.64 Z"
+    />
+    <path
+      id="lc-seg-15"
+      class="lc-seg-warm"
+      d="M 347.96 110.7 A 112 112 0 0 1 355.9 128.54 L 336.99 135.05 A 92 92 0 0 0 330.47 120.4 Z"
+    />
+    <path
+      id="lc-seg-16"
+      class="lc-seg-hot"
+      d="M 357.11 132.25 A 112 112 0 0 1 361.17 151.35 L 341.31 153.79 A 92 92 0 0 0 337.98 138.1 Z"
+    />
+    <path
+      id="lc-seg-17"
+      class="lc-seg-hot"
+      d="M 361.57 155.24 A 112 112 0 0 1 361.57 174.76 L 341.65 173.02 A 92 92 0 0 0 341.65 156.98 Z"
+    />
+    <path
+      id="lc-seg-18"
+      class="lc-seg-hot"
+      d="M 361.17 178.65 A 112 112 0 0 1 357.11 197.75 L 337.98 191.9 A 92 92 0 0 0 341.31 176.21 Z"
+    />
+    <path
+      id="lc-seg-19"
+      class="lc-seg-hot"
+      d="M 355.9 201.46 A 112 112 0 0 1 347.96 219.3 L 330.47 209.6 A 92 92 0 0 0 336.99 194.95 Z"
+    />
+  </g>
+  <text x="184.18" y="203" class="lc-scale">0</text>
+  <text x="177.72" y="141.51" class="lc-scale">40</text>
+  <text x="219.09" y="95.57" class="lc-scale">80</text>
+  <text x="280.91" y="95.57" class="lc-scale">120</text>
+  <text x="322.28" y="141.51" class="lc-scale">160</text>
+  <text x="315.82" y="203" class="lc-scale">200</text>
+
+  <!-- Needle drawn pointing up (100 km/h); cuttleskin rotates it around (250, 165) -->
+  <path id="lc-needle" class="lc-needle" d="M 246.5 168 L 248.5 80 Q 250 75 251.5 80 L 253.5 168 Z" />
+  <circle class="lc-hub" cx="250" cy="165" r="9" />
+  <circle class="lc-hub-core" cx="250" cy="165" r="4" />
+
+  <!-- Readout: bound value and status text mapped from speed ranges -->
+  <text id="lc-speed-text" class="lc-readout" x="264" y="228">0</text>
+  <text class="lc-unit" x="270" y="228">KM/H</text>
+  <text id="lc-status-text" class="lc-status" x="250" y="254">IMPULSE</text>
+</svg>

@@ -1,0 +1,259 @@
+{
+  "variables": [
+    {
+      "name": "speed",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 200,
+      "defaultValue": 0
+    }
+  ],
+  "transformations": [
+    {
+      "name": "led_0",
+      "type": "opacity",
+      "element": "rl-led-0",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 10, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_1",
+      "type": "opacity",
+      "element": "rl-led-1",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 10, "value": 0.12, "easing": "step" },
+        { "at": 20, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_2",
+      "type": "opacity",
+      "element": "rl-led-2",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 20, "value": 0.12, "easing": "step" },
+        { "at": 30, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_3",
+      "type": "opacity",
+      "element": "rl-led-3",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 30, "value": 0.12, "easing": "step" },
+        { "at": 40, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_4",
+      "type": "opacity",
+      "element": "rl-led-4",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 40, "value": 0.12, "easing": "step" },
+        { "at": 50, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_5",
+      "type": "opacity",
+      "element": "rl-led-5",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 50, "value": 0.12, "easing": "step" },
+        { "at": 60, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_6",
+      "type": "opacity",
+      "element": "rl-led-6",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 60, "value": 0.12, "easing": "step" },
+        { "at": 70, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_7",
+      "type": "opacity",
+      "element": "rl-led-7",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 70, "value": 0.12, "easing": "step" },
+        { "at": 80, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_8",
+      "type": "opacity",
+      "element": "rl-led-8",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 80, "value": 0.12, "easing": "step" },
+        { "at": 90, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_9",
+      "type": "opacity",
+      "element": "rl-led-9",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 90, "value": 0.12, "easing": "step" },
+        { "at": 100, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_10",
+      "type": "opacity",
+      "element": "rl-led-10",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 100, "value": 0.12, "easing": "step" },
+        { "at": 110, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_11",
+      "type": "opacity",
+      "element": "rl-led-11",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 110, "value": 0.12, "easing": "step" },
+        { "at": 120, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_12",
+      "type": "opacity",
+      "element": "rl-led-12",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 120, "value": 0.12, "easing": "step" },
+        { "at": 130, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_13",
+      "type": "opacity",
+      "element": "rl-led-13",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 130, "value": 0.12, "easing": "step" },
+        { "at": 140, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_14",
+      "type": "opacity",
+      "element": "rl-led-14",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 140, "value": 0.12, "easing": "step" },
+        { "at": 150, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_15",
+      "type": "opacity",
+      "element": "rl-led-15",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 150, "value": 0.12, "easing": "step" },
+        { "at": 160, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_16",
+      "type": "opacity",
+      "element": "rl-led-16",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 160, "value": 0.12, "easing": "step" },
+        { "at": 170, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_17",
+      "type": "opacity",
+      "element": "rl-led-17",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 170, "value": 0.12, "easing": "step" },
+        { "at": 180, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_18",
+      "type": "opacity",
+      "element": "rl-led-18",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 180, "value": 0.12, "easing": "step" },
+        { "at": 190, "value": 1 }
+      ]
+    },
+    {
+      "name": "led_19",
+      "type": "opacity",
+      "element": "rl-led-19",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 190, "value": 0.12, "easing": "step" },
+        { "at": "$max", "value": 1 }
+      ]
+    },
+    {
+      "name": "speed_text",
+      "type": "text",
+      "element": "rl-speed-text",
+      "variable": "speed",
+      "bind": true
+    },
+    {
+      "name": "eco_lamp",
+      "type": "opacity",
+      "element": "rl-lamp-eco",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 1, "easing": "step" },
+        { "at": 60, "value": 0.12, "label": "eco" }
+      ]
+    },
+    {
+      "name": "over_lamp",
+      "type": "opacity",
+      "element": "rl-lamp-over",
+      "variable": "speed",
+      "frames": [
+        { "at": "$min", "value": 0.12, "easing": "step" },
+        { "at": 180, "value": 1, "label": "over" }
+      ]
+    }
+  ]
+}

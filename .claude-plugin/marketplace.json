@@ -1,0 +1,15 @@
+{
+  "name": "cuttleskin",
+  "owner": {
+    "name": "byteAgenten GmbH",
+    "url": "https://cuttleskin.com"
+  },
+  "description": "Claude skills for cuttleskin, the editor for animated, data-driven SVG graphics.",
+  "plugins": [
+    {
+      "name": "cuttleskin-graphic",
+      "source": "./",
+      "description": "Create, edit and validate cuttleskin graphics: animated, data-driven SVGs with a cuttleskin.config.json."
+    }
+  ]
+}

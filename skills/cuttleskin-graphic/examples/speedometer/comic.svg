@@ -1,0 +1,115 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 320" width="340" height="320">
+  <!-- Comic style. Classes and IDs use the prefix `cm-`, because styles of inline SVGs apply to the whole page. -->
+  <defs>
+    <pattern id="cm-dots" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="1.6" fill="#f4c7d8" />
+    </pattern>
+  </defs>
+  <style>
+    .cm-bg { fill: #fff7e8; stroke: #111; stroke-width: 5; }
+    .cm-dots { fill: url(#cm-dots); }
+    .cm-ink { stroke: #111; stroke-linejoin: round; stroke-linecap: round; }
+    .cm-speedline { stroke: #111; stroke-width: 4; stroke-linecap: round; opacity: 0; }
+    .cm-face { fill: #fff3b0; stroke: #111; stroke-width: 5; }
+    .cm-zone-outline { fill: none; stroke: #111; stroke-width: 26; }
+    .cm-zone-green { fill: none; stroke: #4ade80; stroke-width: 18; }
+    .cm-zone-yellow { fill: none; stroke: #facc15; stroke-width: 18; }
+    .cm-zone-red { fill: none; stroke: #f43f5e; stroke-width: 18; }
+    .cm-scale {
+      fill: #111;
+      font: 400 18px Bangers, 'Comic Sans MS', cursive;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+    .cm-needle { fill: #ef4444; stroke: #111; stroke-width: 3.5; stroke-linejoin: round; }
+    .cm-hub { fill: #111; }
+    .cm-badge { fill: #3b82f6; stroke: #111; stroke-width: 4; }
+    .cm-readout {
+      fill: #fff;
+      stroke: #111;
+      stroke-width: 5;
+      paint-order: stroke;
+      font: 400 40px Bangers, 'Comic Sans MS', cursive;
+      letter-spacing: 2px;
+      text-anchor: middle;
+    }
+    .cm-unit {
+      fill: #111;
+      font: 400 15px Bangers, 'Comic Sans MS', cursive;
+      letter-spacing: 1px;
+      text-anchor: middle;
+    }
+    .cm-bubble { fill: #fff; stroke: #111; stroke-width: 4; stroke-linejoin: round; }
+    .cm-bubble-text {
+      fill: #111;
+      font: 400 22px Bangers, 'Comic Sans MS', cursive;
+      letter-spacing: 1px;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+    .cm-burst { fill: #facc15; stroke: #111; stroke-width: 4; stroke-linejoin: round; }
+    .cm-burst-text {
+      fill: #ef4444;
+      stroke: #111;
+      stroke-width: 3;
+      paint-order: stroke;
+      font: 400 24px Bangers, 'Comic Sans MS', cursive;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+  </style>
+
+  <rect class="cm-bg" x="3" y="3" width="334" height="314" rx="14" />
+  <rect class="cm-dots" x="6" y="6" width="328" height="308" rx="12" />
+
+  <!-- Motion lines, fading in from 80 km/h -->
+  <g id="cm-speedlines" class="cm-speedline">
+    <line x1="6" y1="160" x2="26" y2="160" />
+    <line x1="10" y1="185" x2="28" y2="185" />
+    <line x1="6" y1="210" x2="26" y2="210" />
+    <line x1="12" y1="235" x2="28" y2="235" />
+  </g>
+
+  <!-- Dial with three static zones -->
+  <circle class="cm-face" cx="150" cy="190" r="118" />
+  <path class="cm-zone-outline" d="M 65.13 239 A 98 98 0 1 1 234.87 239" />
+  <path class="cm-zone-green" d="M 65.13 239 A 98 98 0 0 1 101 105.13" />
+  <path class="cm-zone-yellow" d="M 101 105.13 A 98 98 0 0 1 225.07 127.01" />
+  <path class="cm-zone-red" d="M 225.07 127.01 A 98 98 0 0 1 234.87 239" />
+  <text x="91.11" y="224" class="cm-scale">0</text>
+  <text x="91.11" y="156" class="cm-scale">50</text>
+  <text x="150" y="122" class="cm-scale">100</text>
+  <text x="208.89" y="156" class="cm-scale">150</text>
+  <text x="208.89" y="224" class="cm-scale">200</text>
+
+  <!-- Cartoon arrow drawn pointing up (100 km/h); cuttleskin rotates it around (150, 190) with an elastic wobble -->
+  <path
+    id="cm-needle"
+    class="cm-needle"
+    d="M 150 92 L 165 122 L 156 122 L 156 196 L 144 196 L 144 122 L 135 122 Z"
+  />
+  <circle class="cm-hub" cx="150" cy="190" r="11" />
+
+  <!-- Readout badge -->
+  <rect class="cm-badge" x="98" y="226" width="104" height="52" rx="14" />
+  <text id="cm-speed-text" class="cm-readout" x="150" y="268">0</text>
+  <text class="cm-unit" x="150" y="298">KM/H</text>
+
+  <!-- Speech bubble with a comment per speed range; its color heats up -->
+  <path
+    id="cm-bubble"
+    class="cm-bubble"
+    d="M 210 30 H 322 A 12 12 0 0 1 334 42 V 84 A 12 12 0 0 1 322 96 H 240 L 218 120 L 222 96 H 210 A 12 12 0 0 1 198 84 V 42 A 12 12 0 0 1 210 30 Z"
+  />
+  <text id="cm-bubble-text" class="cm-bubble-text" x="266" y="64">Gemütlich…</text>
+
+  <!-- Starburst that pops up near top speed -->
+  <g id="cm-burst" opacity="0">
+    <polygon
+      class="cm-burst"
+      points="58,10 65.76,31.02 83,16.7 79.21,38.79 101.3,35 86.98,52.24 108,60 86.98,67.76 101.3,85 79.21,81.21 83,103.3 65.76,88.98 58,110 50.24,88.98 33,103.3 36.79,81.21 14.7,85 29.02,67.76 8,60 29.02,52.24 14.7,35 36.79,38.79 33,16.7 50.24,31.02"
+    />
+    <text class="cm-burst-text" x="58" y="62">ZOOM!</text>
+  </g>
+</svg>

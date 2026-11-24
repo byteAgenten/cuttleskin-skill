@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" width="320" height="300">
+  <!-- Cyberpunk neon style. Classes and IDs use the prefix `cp-`, because styles and filter IDs
+       of inline SVGs are shared by the whole page. -->
+  <defs>
+    <filter id="cp-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <pattern id="cp-grid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M 16 0 H 0 V 16" fill="none" stroke="#1d1240" stroke-width="1" />
+    </pattern>
+  </defs>
+  <style>
+    .cp-bg { fill: #0a0518; }
+    .cp-grid { fill: url(#cp-grid); }
+    .cp-frame { fill: none; stroke: #ff00e6; stroke-width: 1.5; opacity: 0.6; }
+    .cp-track { fill: none; stroke: #241447; stroke-width: 16; stroke-linecap: round; }
+    .cp-ring {
+      fill: none;
+      stroke: #00f0ff;
+      stroke-width: 3;
+      stroke-linecap: round;
+      filter: url(#cp-glow);
+    }
+    .cp-tick { stroke: #3d6b8f; stroke-width: 1.5; }
+    .cp-tick-major { stroke: #00f0ff; stroke-width: 2.5; filter: url(#cp-glow); }
+    .cp-scale {
+      fill: #7fe9ff;
+      font: 700 11px 'Courier New', monospace;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+    .cp-needle { fill: #00f0ff; filter: url(#cp-glow); }
+    .cp-hub { fill: #0a0518; stroke: #ff00e6; stroke-width: 3; filter: url(#cp-glow); }
+    .cp-readout {
+      fill: #00f0ff;
+      font: 700 44px 'Courier New', monospace;
+      text-anchor: middle;
+      filter: url(#cp-glow);
+    }
+    .cp-glitch-a { fill: #ff2a6d; opacity: 0; }
+    .cp-glitch-b { fill: #05d9e8; opacity: 0; }
+    .cp-glitch { font: 700 44px 'Courier New', monospace; text-anchor: middle; }
+    .cp-unit { fill: #ff00e6; font: 700 12px 'Courier New', monospace; letter-spacing: 4px; text-anchor: middle; }
+    .cp-status { fill: #f9f871; font: 700 13px 'Courier New', monospace; letter-spacing: 3px; text-anchor: middle; }
+    .cp-hud { fill: #ff00e6; font: 700 11px 'Courier New', monospace; letter-spacing: 2px; }
+    .cp-hud-dim { fill: #3d6b8f; font: 400 9px 'Courier New', monospace; }
+  </style>
+
+  <rect class="cp-bg" width="320" height="300" rx="10" />
+  <rect class="cp-grid" width="320" height="300" rx="10" />
+  <path class="cp-frame" d="M 8 30 V 8 H 120 M 312 270 V 292 H 200 M 200 8 H 312 V 30 M 8 270 V 292 H 120" />
+  <text class="cp-hud" x="16" y="24">NEURAL//DRIVE</text>
+  <text class="cp-hud-dim" x="232" y="22">0x7F3A_SYNC</text>
+
+  <!-- Neon ring: color and thickness driven by cuttleskin -->
+  <path class="cp-track" d="M 56.08 230 A 120 120 0 1 1 263.92 230" />
+  <path id="cp-ring" class="cp-ring" d="M 56.08 230 A 120 120 0 1 1 263.92 230" />
+
+  <g id="cp-scale">
+    <line x1="80.33" y1="216" x2="68.2" y2="223" class="cp-tick-major" />
+    <text x="92.45" y="209" class="cp-scale">0</text>
+    <line x1="66.8" y1="200.28" x2="59.19" y2="202.76" class="cp-tick" />
+    <line x1="62.54" y1="180.24" x2="54.58" y2="181.08" class="cp-tick" />
+    <line x1="62.54" y1="159.76" x2="54.58" y2="158.92" class="cp-tick" />
+    <line x1="66.8" y1="139.72" x2="59.19" y2="137.24" class="cp-tick" />
+    <line x1="80.33" y1="124" x2="68.2" y2="117" class="cp-tick-major" />
+    <text x="92.45" y="131" class="cp-scale">50</text>
+    <line x1="87.17" y1="104.43" x2="81.23" y2="99.07" class="cp-tick" />
+    <line x1="102.4" y1="90.72" x2="97.69" y2="84.24" class="cp-tick" />
+    <line x1="120.14" y1="80.47" x2="116.89" y2="73.16" class="cp-tick" />
+    <line x1="139.62" y1="74.14" x2="137.96" y2="66.32" class="cp-tick" />
+    <line x1="160" y1="78" x2="160" y2="64" class="cp-tick-major" />
+    <text x="160" y="92" class="cp-scale">100</text>
+    <line x1="180.38" y1="74.14" x2="182.04" y2="66.32" class="cp-tick" />
+    <line x1="199.86" y1="80.47" x2="203.11" y2="73.16" class="cp-tick" />
+    <line x1="217.6" y1="90.72" x2="222.31" y2="84.24" class="cp-tick" />
+    <line x1="232.83" y1="104.43" x2="238.77" y2="99.07" class="cp-tick" />
+    <line x1="239.67" y1="124" x2="251.8" y2="117" class="cp-tick-major" />
+    <text x="227.55" y="131" class="cp-scale">150</text>
+    <line x1="253.2" y1="139.72" x2="260.81" y2="137.24" class="cp-tick" />
+    <line x1="257.46" y1="159.76" x2="265.42" y2="158.92" class="cp-tick" />
+    <line x1="257.46" y1="180.24" x2="265.42" y2="181.08" class="cp-tick" />
+    <line x1="253.2" y1="200.28" x2="260.81" y2="202.76" class="cp-tick" />
+    <line x1="239.67" y1="216" x2="251.8" y2="223" class="cp-tick-major" />
+    <text x="227.55" y="209" class="cp-scale">200</text>
+  </g>
+
+  <!-- Needle drawn pointing up (100 km/h); cuttleskin rotates it around (160, 170) -->
+  <path id="cp-needle" class="cp-needle" d="M 158.5 176 L 159.3 72 L 160.7 72 L 161.5 176 Z" />
+  <circle class="cp-hub" cx="160" cy="170" r="8" />
+
+  <!-- Readout with two offset copies that fade in as a glitch effect at high speed -->
+  <text id="cp-glitch-a" class="cp-glitch cp-glitch-a" x="157" y="236">0</text>
+  <text id="cp-glitch-b" class="cp-glitch cp-glitch-b" x="163" y="234">0</text>
+  <text id="cp-speed-text" class="cp-readout" x="160" y="235">0</text>
+  <text class="cp-unit" x="160" y="256">KM/H</text>
+  <text id="cp-status-text" class="cp-status" x="160" y="280">CRUISE</text>
+</svg>

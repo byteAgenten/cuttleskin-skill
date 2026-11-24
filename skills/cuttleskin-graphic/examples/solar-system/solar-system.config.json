@@ -1,0 +1,1758 @@
+{
+  "variables": [
+    {
+      "name": "days",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 36525,
+      "defaultValue": 9819
+    },
+    {
+      "name": "focus",
+      "type": "text",
+      "defaultValue": "Erde"
+    },
+    {
+      "name": "orbits",
+      "type": "boolean",
+      "defaultValue": true
+    }
+  ],
+  "transformations": [
+    {
+      "name": "radar_sweep",
+      "type": "rotate",
+      "element": "ss-sweep",
+      "variable": "days",
+      "origin": {
+        "x": 470,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 0
+        },
+        {
+          "at": "$max",
+          "value": -438300
+        }
+      ]
+    },
+    {
+      "name": "orbit_mercury_highlight",
+      "type": "stroke-color",
+      "element": "ss-orbit-mercury",
+      "variable": "focus",
+      "transition": {
+        "duration": 400,
+        "easing": "easeout"
+      },
+      "frames": [
+        {
+          "at": "Merkur",
+          "value": "#7ff6ff"
+        }
+      ],
+      "default": "#3d7fa8"
+    },
+    {
+      "name": "orbit_mercury_width",
+      "type": "stroke-width",
+      "element": "ss-orbit-mercury",
+      "variable": "focus",
+      "frames": [
+        {
+          "at": "Merkur",
+          "value": 2
+        }
+      ],
+      "default": 1
+    },
+    {
+      "name": "orbit_venus_highlight",
+      "type": "stroke-color",
+      "element": "ss-orbit-venus",
+      "variable": "focus",
+      "transition": {
+        "duration": 400,
+        "easing": "easeout"
+      },
+      "frames": [
+        {
+          "at": "Venus",
+          "value": "#7ff6ff"
+        }
+      ],
+      "default": "#3d7fa8"
+    },
+    {
+      "name": "orbit_venus_width",
+      "type": "stroke-width",
+      "element": "ss-orbit-venus",
+      "variable": "focus",
+      "frames": [
+        {
+          "at": "Venus",
+          "value": 2
+        }
+      ],
+      "default": 1
+    },
+    {
+      "name": "orbit_earth_highlight",
+      "type": "stroke-color",
+      "element": "ss-orbit-earth",
+      "variable": "focus",
+      "transition": {
+        "duration": 400,
+        "easing": "easeout"
+      },
+      "frames": [
+        {
+          "at": "Erde",
+          "value": "#7ff6ff"
+        }
+      ],
+      "default": "#3d7fa8"
+    },
+    {
+      "name": "orbit_earth_width",
+      "type": "stroke-width",
+      "element": "ss-orbit-earth",
+      "variable": "focus",
+      "frames": [
+        {
+          "at": "Erde",
+          "value": 2
+        }
+      ],
+      "default": 1
+    },
+    {
+      "name": "orbit_mars_highlight",
+      "type": "stroke-color",
+      "element": "ss-orbit-mars",
+      "variable": "focus",
+      "transition": {
+        "duration": 400,
+        "easing": "easeout"
+      },
+      "frames": [
+        {
+          "at": "Mars",
+          "value": "#7ff6ff"
+        }
+      ],
+      "default": "#3d7fa8"
+    },
+    {
+      "name": "orbit_mars_width",
+      "type": "stroke-width",
+      "element": "ss-orbit-mars",
+      "variable": "focus",
+      "frames": [
+        {
+          "at": "Mars",
+          "value": 2
+        }
+      ],
+      "default": 1
+    },
+    {
+      "name": "orbit_jupiter_highlight",
+      "type": "stroke-color",
+      "element": "ss-orbit-jupiter",
+      "variable": "focus",
+      "transition": {
+        "duration": 400,
+        "easing": "easeout"
+      },
+      "frames": [
+        {
+          "at": "Jupiter",
+          "value": "#7ff6ff"
+        }
+      ],
+      "default": "#3d7fa8"
+    },
+    {
+      "name": "orbit_jupiter_width",
+      "type": "stroke-width",
+      "element": "ss-orbit-jupiter",
+      "variable": "focus",
+      "frames": [
+        {
+          "at": "Jupiter",
+          "value": 2
+        }
+      ],
+      "default": 1
+    },
+    {
+      "name": "orbit_saturn_highlight",
+      "type": "stroke-color",
+      "element": "ss-orbit-saturn",
+      "variable": "focus",
+      "transition": {
+        "duration": 400,
+        "easing": "easeout"
+      },
+      "frames": [
+        {
+          "at": "Saturn",
+          "value": "#7ff6ff"
+        }
+      ],
+      "default": "#3d7fa8"
+    },
+    {
+      "name": "orbit_saturn_width",
+      "type": "stroke-width",
+      "element": "ss-orbit-saturn",
+      "variable": "focus",
+      "frames": [
+        {
+          "at": "Saturn",
+          "value": 2
+        }
+      ],
+      "default": 1
+    },
+    {
+      "name": "orbit_uranus_highlight",
+      "type": "stroke-color",
+      "element": "ss-orbit-uranus",
+      "variable": "focus",
+      "transition": {
+        "duration": 400,
+        "easing": "easeout"
+      },
+      "frames": [
+        {
+          "at": "Uranus",
+          "value": "#7ff6ff"
+        }
+      ],
+      "default": "#3d7fa8"
+    },
+    {
+      "name": "orbit_uranus_width",
+      "type": "stroke-width",
+      "element": "ss-orbit-uranus",
+      "variable": "focus",
+      "frames": [
+        {
+          "at": "Uranus",
+          "value": 2
+        }
+      ],
+      "default": 1
+    },
+    {
+      "name": "orbit_neptune_highlight",
+      "type": "stroke-color",
+      "element": "ss-orbit-neptune",
+      "variable": "focus",
+      "transition": {
+        "duration": 400,
+        "easing": "easeout"
+      },
+      "frames": [
+        {
+          "at": "Neptun",
+          "value": "#7ff6ff"
+        }
+      ],
+      "default": "#3d7fa8"
+    },
+    {
+      "name": "orbit_neptune_width",
+      "type": "stroke-width",
+      "element": "ss-orbit-neptune",
+      "variable": "focus",
+      "frames": [
+        {
+          "at": "Neptun",
+          "value": 2
+        }
+      ],
+      "default": 1
+    },
+    {
+      "name": "orbits_visible",
+      "type": "opacity",
+      "element": "ss-orbits",
+      "variable": "orbits",
+      "transition": {
+        "duration": 500,
+        "easing": "easeinout"
+      },
+      "frames": [
+        {
+          "at": false,
+          "value": 0
+        },
+        {
+          "at": true,
+          "value": 1
+        }
+      ]
+    },
+    {
+      "name": "belt_drift",
+      "type": "rotate",
+      "element": "ss-belt",
+      "variable": "days",
+      "origin": {
+        "x": 470,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 0
+        },
+        {
+          "at": "$max",
+          "value": -7826.8
+        }
+      ]
+    },
+    {
+      "name": "sun_rotation",
+      "type": "rotate",
+      "element": "ss-corona",
+      "variable": "days",
+      "origin": {
+        "x": 470,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 0
+        },
+        {
+          "at": "$max",
+          "value": -518085.1
+        }
+      ]
+    },
+    {
+      "name": "sun_target",
+      "type": "opacity",
+      "element": "ss-sun-target",
+      "variable": "focus",
+      "transition": {
+        "duration": 300,
+        "easing": "easeout"
+      },
+      "frames": [
+        {
+          "at": "Sonne",
+          "value": 1
+        }
+      ],
+      "default": 0
+    },
+    {
+      "name": "mercury_orbit",
+      "type": "rotate",
+      "element": "ss-mercury-orbit",
+      "variable": "days",
+      "origin": {
+        "x": 470,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": -252.25
+        },
+        {
+          "at": "$max",
+          "value": -149725.36
+        }
+      ]
+    },
+    {
+      "name": "mercury_tag_upright",
+      "type": "rotate",
+      "element": "ss-mercury-tag",
+      "variable": "days",
+      "origin": {
+        "x": 532,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 252.25
+        },
+        {
+          "at": "$max",
+          "value": 149725.36
+        }
+      ]
+    },
+    {
+      "name": "mercury_target",
+      "type": "opacity",
+      "element": "ss-mercury-target",
+      "variable": "focus",
+      "transition": {
+        "duration": 300,
+        "easing": "easeout"
+      },
+      "frames": [
+        {
+          "at": "Merkur",
+          "value": 1
+        }
+      ],
+      "default": 0
+    },
+    {
+      "name": "venus_orbit",
+      "type": "rotate",
+      "element": "ss-venus-orbit",
+      "variable": "days",
+      "origin": {
+        "x": 470,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": -181.98
+        },
+        {
+          "at": "$max",
+          "value": -58699.74
+        }
+      ]
+    },
+    {
+      "name": "venus_tag_upright",
+      "type": "rotate",
+      "element": "ss-venus-tag",
+      "variable": "days",
+      "origin": {
+        "x": 562,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 181.98
+        },
+        {
+          "at": "$max",
+          "value": 58699.74
+        }
+      ]
+    },
+    {
+      "name": "venus_target",
+      "type": "opacity",
+      "element": "ss-venus-target",
+      "variable": "focus",
+      "transition": {
+        "duration": 300,
+        "easing": "easeout"
+      },
+      "frames": [
+        {
+          "at": "Venus",
+          "value": 1
+        }
+      ],
+      "default": 0
+    },
+    {
+      "name": "moon_orbit",
+      "type": "rotate",
+      "element": "ss-moon-orbit",
+      "variable": "days",
+      "origin": {
+        "x": 596,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": -117.86
+        },
+        {
+          "at": "$max",
+          "value": -445385
+        }
+      ]
+    },
+    {
+      "name": "earth_orbit",
+      "type": "rotate",
+      "element": "ss-earth-orbit",
+      "variable": "days",
+      "origin": {
+        "x": 470,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": -100.46
+        },
+        {
+          "at": "$max",
+          "value": -36099.87
+        }
+      ]
+    },
+    {
+      "name": "earth_tag_upright",
+      "type": "rotate",
+      "element": "ss-earth-tag",
+      "variable": "days",
+      "origin": {
+        "x": 596,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 100.46
+        },
+        {
+          "at": "$max",
+          "value": 36099.87
+        }
+      ]
+    },
+    {
+      "name": "earth_target",
+      "type": "opacity",
+      "element": "ss-earth-target",
+      "variable": "focus",
+      "transition": {
+        "duration": 300,
+        "easing": "easeout"
+      },
+      "frames": [
+        {
+          "at": "Erde",
+          "value": 1
+        }
+      ],
+      "default": 0
+    },
+    {
+      "name": "mars_orbit",
+      "type": "rotate",
+      "element": "ss-mars-orbit",
+      "variable": "days",
+      "origin": {
+        "x": 470,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": -355.45
+        },
+        {
+          "at": "$max",
+          "value": -19495.75
+        }
+      ]
+    },
+    {
+      "name": "mars_tag_upright",
+      "type": "rotate",
+      "element": "ss-mars-tag",
+      "variable": "days",
+      "origin": {
+        "x": 630,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 355.45
+        },
+        {
+          "at": "$max",
+          "value": 19495.75
+        }
+      ]
+    },
+    {
+      "name": "mars_target",
+      "type": "opacity",
+      "element": "ss-mars-target",
+      "variable": "focus",
+      "transition": {
+        "duration": 300,
+        "easing": "easeout"
+      },
+      "frames": [
+        {
+          "at": "Mars",
+          "value": 1
+        }
+      ],
+      "default": 0
+    },
+    {
+      "name": "jupiter_surface_upright",
+      "type": "rotate",
+      "element": "ss-jupiter-surface",
+      "variable": "days",
+      "origin": {
+        "x": 718,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 34.4
+        },
+        {
+          "at": "$max",
+          "value": 3069.31
+        }
+      ]
+    },
+    {
+      "name": "jupiter_orbit",
+      "type": "rotate",
+      "element": "ss-jupiter-orbit",
+      "variable": "days",
+      "origin": {
+        "x": 470,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": -34.4
+        },
+        {
+          "at": "$max",
+          "value": -3069.31
+        }
+      ]
+    },
+    {
+      "name": "jupiter_tag_upright",
+      "type": "rotate",
+      "element": "ss-jupiter-tag",
+      "variable": "days",
+      "origin": {
+        "x": 718,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 34.4
+        },
+        {
+          "at": "$max",
+          "value": 3069.31
+        }
+      ]
+    },
+    {
+      "name": "jupiter_target",
+      "type": "opacity",
+      "element": "ss-jupiter-target",
+      "variable": "focus",
+      "transition": {
+        "duration": 300,
+        "easing": "easeout"
+      },
+      "frames": [
+        {
+          "at": "Jupiter",
+          "value": 1
+        }
+      ],
+      "default": 0
+    },
+    {
+      "name": "saturn_surface_upright",
+      "type": "rotate",
+      "element": "ss-saturn-surface",
+      "variable": "days",
+      "origin": {
+        "x": 775,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 49.94
+        },
+        {
+          "at": "$max",
+          "value": 1272.05
+        }
+      ]
+    },
+    {
+      "name": "saturn_orbit",
+      "type": "rotate",
+      "element": "ss-saturn-orbit",
+      "variable": "days",
+      "origin": {
+        "x": 470,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": -49.94
+        },
+        {
+          "at": "$max",
+          "value": -1272.05
+        }
+      ]
+    },
+    {
+      "name": "saturn_tag_upright",
+      "type": "rotate",
+      "element": "ss-saturn-tag",
+      "variable": "days",
+      "origin": {
+        "x": 775,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 49.94
+        },
+        {
+          "at": "$max",
+          "value": 1272.05
+        }
+      ]
+    },
+    {
+      "name": "saturn_target",
+      "type": "opacity",
+      "element": "ss-saturn-target",
+      "variable": "focus",
+      "transition": {
+        "duration": 300,
+        "easing": "easeout"
+      },
+      "frames": [
+        {
+          "at": "Saturn",
+          "value": 1
+        }
+      ],
+      "default": 0
+    },
+    {
+      "name": "uranus_orbit",
+      "type": "rotate",
+      "element": "ss-uranus-orbit",
+      "variable": "days",
+      "origin": {
+        "x": 470,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": -313.23
+        },
+        {
+          "at": "$max",
+          "value": -741.7
+        }
+      ]
+    },
+    {
+      "name": "uranus_tag_upright",
+      "type": "rotate",
+      "element": "ss-uranus-tag",
+      "variable": "days",
+      "origin": {
+        "x": 830,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 313.23
+        },
+        {
+          "at": "$max",
+          "value": 741.7
+        }
+      ]
+    },
+    {
+      "name": "uranus_target",
+      "type": "opacity",
+      "element": "ss-uranus-target",
+      "variable": "focus",
+      "transition": {
+        "duration": 300,
+        "easing": "easeout"
+      },
+      "frames": [
+        {
+          "at": "Uranus",
+          "value": 1
+        }
+      ],
+      "default": 0
+    },
+    {
+      "name": "neptune_orbit",
+      "type": "rotate",
+      "element": "ss-neptune-orbit",
+      "variable": "days",
+      "origin": {
+        "x": 470,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": -304.88
+        },
+        {
+          "at": "$max",
+          "value": -523.37
+        }
+      ]
+    },
+    {
+      "name": "neptune_tag_upright",
+      "type": "rotate",
+      "element": "ss-neptune-tag",
+      "variable": "days",
+      "origin": {
+        "x": 880,
+        "y": 450
+      },
+      "frames": [
+        {
+          "at": "$min",
+          "value": 304.88
+        },
+        {
+          "at": "$max",
+          "value": 523.37
+        }
+      ]
+    },
+    {
+      "name": "neptune_target",
+      "type": "opacity",
+      "element": "ss-neptune-target",
+      "variable": "focus",
+      "transition": {
+        "duration": 300,
+        "easing": "easeout"
+      },
+      "frames": [
+        {
+          "at": "Neptun",
+          "value": 1
+        }
+      ],
+      "default": 0
+    },
+    {
+      "name": "days_text",
+      "type": "text",
+      "element": "ss-days",
+      "variable": "days",
+      "bind": true
+    },
+    {
+      "name": "epoch_progress",
+      "type": "scale",
+      "element": "ss-epoch-bar",
+      "variable": "days",
+      "origin": "left",
+      "frames": [
+        {
+          "at": "$min",
+          "value": {
+            "x": 0.005,
+            "y": 1
+          }
+        },
+        {
+          "at": "$max",
+          "value": {
+            "x": 1,
+            "y": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "year_text",
+      "type": "text",
+      "element": "ss-year",
+      "variable": "days",
+      "frames": [
+        {
+          "at": 0,
+          "value": "2000"
+        },
+        {
+          "at": 366,
+          "value": "2001"
+        },
+        {
+          "at": 731,
+          "value": "2002"
+        },
+        {
+          "at": 1096,
+          "value": "2003"
+        },
+        {
+          "at": 1461,
+          "value": "2004"
+        },
+        {
+          "at": 1827,
+          "value": "2005"
+        },
+        {
+          "at": 2192,
+          "value": "2006"
+        },
+        {
+          "at": 2557,
+          "value": "2007"
+        },
+        {
+          "at": 2922,
+          "value": "2008"
+        },
+        {
+          "at": 3288,
+          "value": "2009"
+        },
+        {
+          "at": 3653,
+          "value": "2010"
+        },
+        {
+          "at": 4018,
+          "value": "2011"
+        },
+        {
+          "at": 4383,
+          "value": "2012"
+        },
+        {
+          "at": 4749,
+          "value": "2013"
+        },
+        {
+          "at": 5114,
+          "value": "2014"
+        },
+        {
+          "at": 5479,
+          "value": "2015"
+        },
+        {
+          "at": 5844,
+          "value": "2016"
+        },
+        {
+          "at": 6210,
+          "value": "2017"
+        },
+        {
+          "at": 6575,
+          "value": "2018"
+        },
+        {
+          "at": 6940,
+          "value": "2019"
+        },
+        {
+          "at": 7305,
+          "value": "2020"
+        },
+        {
+          "at": 7671,
+          "value": "2021"
+        },
+        {
+          "at": 8036,
+          "value": "2022"
+        },
+        {
+          "at": 8401,
+          "value": "2023"
+        },
+        {
+          "at": 8766,
+          "value": "2024"
+        },
+        {
+          "at": 9132,
+          "value": "2025"
+        },
+        {
+          "at": 9497,
+          "value": "2026"
+        },
+        {
+          "at": 9862,
+          "value": "2027"
+        },
+        {
+          "at": 10227,
+          "value": "2028"
+        },
+        {
+          "at": 10593,
+          "value": "2029"
+        },
+        {
+          "at": 10958,
+          "value": "2030"
+        },
+        {
+          "at": 11323,
+          "value": "2031"
+        },
+        {
+          "at": 11688,
+          "value": "2032"
+        },
+        {
+          "at": 12054,
+          "value": "2033"
+        },
+        {
+          "at": 12419,
+          "value": "2034"
+        },
+        {
+          "at": 12784,
+          "value": "2035"
+        },
+        {
+          "at": 13149,
+          "value": "2036"
+        },
+        {
+          "at": 13515,
+          "value": "2037"
+        },
+        {
+          "at": 13880,
+          "value": "2038"
+        },
+        {
+          "at": 14245,
+          "value": "2039"
+        },
+        {
+          "at": 14610,
+          "value": "2040"
+        },
+        {
+          "at": 14976,
+          "value": "2041"
+        },
+        {
+          "at": 15341,
+          "value": "2042"
+        },
+        {
+          "at": 15706,
+          "value": "2043"
+        },
+        {
+          "at": 16071,
+          "value": "2044"
+        },
+        {
+          "at": 16437,
+          "value": "2045"
+        },
+        {
+          "at": 16802,
+          "value": "2046"
+        },
+        {
+          "at": 17167,
+          "value": "2047"
+        },
+        {
+          "at": 17532,
+          "value": "2048"
+        },
+        {
+          "at": 17898,
+          "value": "2049"
+        },
+        {
+          "at": 18263,
+          "value": "2050"
+        },
+        {
+          "at": 18628,
+          "value": "2051"
+        },
+        {
+          "at": 18993,
+          "value": "2052"
+        },
+        {
+          "at": 19359,
+          "value": "2053"
+        },
+        {
+          "at": 19724,
+          "value": "2054"
+        },
+        {
+          "at": 20089,
+          "value": "2055"
+        },
+        {
+          "at": 20454,
+          "value": "2056"
+        },
+        {
+          "at": 20820,
+          "value": "2057"
+        },
+        {
+          "at": 21185,
+          "value": "2058"
+        },
+        {
+          "at": 21550,
+          "value": "2059"
+        },
+        {
+          "at": 21915,
+          "value": "2060"
+        },
+        {
+          "at": 22281,
+          "value": "2061"
+        },
+        {
+          "at": 22646,
+          "value": "2062"
+        },
+        {
+          "at": 23011,
+          "value": "2063"
+        },
+        {
+          "at": 23376,
+          "value": "2064"
+        },
+        {
+          "at": 23742,
+          "value": "2065"
+        },
+        {
+          "at": 24107,
+          "value": "2066"
+        },
+        {
+          "at": 24472,
+          "value": "2067"
+        },
+        {
+          "at": 24837,
+          "value": "2068"
+        },
+        {
+          "at": 25203,
+          "value": "2069"
+        },
+        {
+          "at": 25568,
+          "value": "2070"
+        },
+        {
+          "at": 25933,
+          "value": "2071"
+        },
+        {
+          "at": 26298,
+          "value": "2072"
+        },
+        {
+          "at": 26664,
+          "value": "2073"
+        },
+        {
+          "at": 27029,
+          "value": "2074"
+        },
+        {
+          "at": 27394,
+          "value": "2075"
+        },
+        {
+          "at": 27759,
+          "value": "2076"
+        },
+        {
+          "at": 28125,
+          "value": "2077"
+        },
+        {
+          "at": 28490,
+          "value": "2078"
+        },
+        {
+          "at": 28855,
+          "value": "2079"
+        },
+        {
+          "at": 29220,
+          "value": "2080"
+        },
+        {
+          "at": 29586,
+          "value": "2081"
+        },
+        {
+          "at": 29951,
+          "value": "2082"
+        },
+        {
+          "at": 30316,
+          "value": "2083"
+        },
+        {
+          "at": 30681,
+          "value": "2084"
+        },
+        {
+          "at": 31047,
+          "value": "2085"
+        },
+        {
+          "at": 31412,
+          "value": "2086"
+        },
+        {
+          "at": 31777,
+          "value": "2087"
+        },
+        {
+          "at": 32142,
+          "value": "2088"
+        },
+        {
+          "at": 32508,
+          "value": "2089"
+        },
+        {
+          "at": 32873,
+          "value": "2090"
+        },
+        {
+          "at": 33238,
+          "value": "2091"
+        },
+        {
+          "at": 33603,
+          "value": "2092"
+        },
+        {
+          "at": 33969,
+          "value": "2093"
+        },
+        {
+          "at": 34334,
+          "value": "2094"
+        },
+        {
+          "at": 34699,
+          "value": "2095"
+        },
+        {
+          "at": 35064,
+          "value": "2096"
+        },
+        {
+          "at": 35430,
+          "value": "2097"
+        },
+        {
+          "at": 35795,
+          "value": "2098"
+        },
+        {
+          "at": 36160,
+          "value": "2099"
+        },
+        {
+          "at": 36525,
+          "value": "2100"
+        }
+      ]
+    },
+    {
+      "name": "focus_name",
+      "type": "text",
+      "element": "ss-focus-name",
+      "variable": "focus",
+      "frames": [
+        {
+          "at": "Sonne",
+          "value": "SONNE"
+        },
+        {
+          "at": "Merkur",
+          "value": "MERKUR"
+        },
+        {
+          "at": "Venus",
+          "value": "VENUS"
+        },
+        {
+          "at": "Erde",
+          "value": "ERDE"
+        },
+        {
+          "at": "Mars",
+          "value": "MARS"
+        },
+        {
+          "at": "Jupiter",
+          "value": "JUPITER"
+        },
+        {
+          "at": "Saturn",
+          "value": "SATURN"
+        },
+        {
+          "at": "Uranus",
+          "value": "URANUS"
+        },
+        {
+          "at": "Neptun",
+          "value": "NEPTUN"
+        }
+      ],
+      "default": "—"
+    },
+    {
+      "name": "focus_class",
+      "type": "text",
+      "element": "ss-focus-cls",
+      "variable": "focus",
+      "frames": [
+        {
+          "at": "Sonne",
+          "value": "G2V-HAUPTREIHENSTERN"
+        },
+        {
+          "at": "Merkur",
+          "value": "GESTEINSPLANET"
+        },
+        {
+          "at": "Venus",
+          "value": "GESTEINSPLANET"
+        },
+        {
+          "at": "Erde",
+          "value": "GESTEINSPLANET"
+        },
+        {
+          "at": "Mars",
+          "value": "GESTEINSPLANET"
+        },
+        {
+          "at": "Jupiter",
+          "value": "GASRIESE"
+        },
+        {
+          "at": "Saturn",
+          "value": "GASRIESE"
+        },
+        {
+          "at": "Uranus",
+          "value": "EISRIESE"
+        },
+        {
+          "at": "Neptun",
+          "value": "EISRIESE"
+        }
+      ],
+      "default": "KEIN ZIEL"
+    },
+    {
+      "name": "focus_dist",
+      "type": "text",
+      "element": "ss-focus-dist",
+      "variable": "focus",
+      "frames": [
+        {
+          "at": "Sonne",
+          "value": "0 AE"
+        },
+        {
+          "at": "Merkur",
+          "value": "0,39 AE"
+        },
+        {
+          "at": "Venus",
+          "value": "0,72 AE"
+        },
+        {
+          "at": "Erde",
+          "value": "1,00 AE"
+        },
+        {
+          "at": "Mars",
+          "value": "1,52 AE"
+        },
+        {
+          "at": "Jupiter",
+          "value": "5,20 AE"
+        },
+        {
+          "at": "Saturn",
+          "value": "9,58 AE"
+        },
+        {
+          "at": "Uranus",
+          "value": "19,2 AE"
+        },
+        {
+          "at": "Neptun",
+          "value": "30,1 AE"
+        }
+      ],
+      "default": "—"
+    },
+    {
+      "name": "focus_period",
+      "type": "text",
+      "element": "ss-focus-period",
+      "variable": "focus",
+      "frames": [
+        {
+          "at": "Sonne",
+          "value": "—"
+        },
+        {
+          "at": "Merkur",
+          "value": "88 Tage"
+        },
+        {
+          "at": "Venus",
+          "value": "225 Tage"
+        },
+        {
+          "at": "Erde",
+          "value": "365,26 Tage"
+        },
+        {
+          "at": "Mars",
+          "value": "687 Tage"
+        },
+        {
+          "at": "Jupiter",
+          "value": "11,9 Jahre"
+        },
+        {
+          "at": "Saturn",
+          "value": "29,5 Jahre"
+        },
+        {
+          "at": "Uranus",
+          "value": "84 Jahre"
+        },
+        {
+          "at": "Neptun",
+          "value": "165 Jahre"
+        }
+      ],
+      "default": "—"
+    },
+    {
+      "name": "focus_diam",
+      "type": "text",
+      "element": "ss-focus-diam",
+      "variable": "focus",
+      "frames": [
+        {
+          "at": "Sonne",
+          "value": "1 392 700 km"
+        },
+        {
+          "at": "Merkur",
+          "value": "4 879 km"
+        },
+        {
+          "at": "Venus",
+          "value": "12 104 km"
+        },
+        {
+          "at": "Erde",
+          "value": "12 742 km"
+        },
+        {
+          "at": "Mars",
+          "value": "6 779 km"
+        },
+        {
+          "at": "Jupiter",
+          "value": "139 820 km"
+        },
+        {
+          "at": "Saturn",
+          "value": "116 460 km"
+        },
+        {
+          "at": "Uranus",
+          "value": "50 724 km"
+        },
+        {
+          "at": "Neptun",
+          "value": "49 244 km"
+        }
+      ],
+      "default": "—"
+    },
+    {
+      "name": "focus_moons",
+      "type": "text",
+      "element": "ss-focus-moons",
+      "variable": "focus",
+      "frames": [
+        {
+          "at": "Sonne",
+          "value": "8 Planeten"
+        },
+        {
+          "at": "Merkur",
+          "value": "0"
+        },
+        {
+          "at": "Venus",
+          "value": "0"
+        },
+        {
+          "at": "Erde",
+          "value": "1"
+        },
+        {
+          "at": "Mars",
+          "value": "2"
+        },
+        {
+          "at": "Jupiter",
+          "value": "95"
+        },
+        {
+          "at": "Saturn",
+          "value": "274"
+        },
+        {
+          "at": "Uranus",
+          "value": "28"
+        },
+        {
+          "at": "Neptun",
+          "value": "16"
+        }
+      ],
+      "default": "—"
+    },
+    {
+      "name": "focus_temp",
+      "type": "text",
+      "element": "ss-focus-temp",
+      "variable": "focus",
+      "frames": [
+        {
+          "at": "Sonne",
+          "value": "≈ 5 500 °C"
+        },
+        {
+          "at": "Merkur",
+          "value": "−180 … 430 °C"
+        },
+        {
+          "at": "Venus",
+          "value": "≈ 465 °C"
+        },
+        {
+          "at": "Erde",
+          "value": "≈ 15 °C"
+        },
+        {
+          "at": "Mars",
+          "value": "≈ −63 °C"
+        },
+        {
+          "at": "Jupiter",
+          "value": "≈ −110 °C"
+        },
+        {
+          "at": "Saturn",
+          "value": "≈ −140 °C"
+        },
+        {
+          "at": "Uranus",
+          "value": "≈ −195 °C"
+        },
+        {
+          "at": "Neptun",
+          "value": "≈ −200 °C"
+        }
+      ],
+      "default": "—"
+    },
+    {
+      "name": "focus_light",
+      "type": "text",
+      "element": "ss-focus-light",
+      "variable": "focus",
+      "frames": [
+        {
+          "at": "Sonne",
+          "value": "—"
+        },
+        {
+          "at": "Merkur",
+          "value": "3,2 min"
+        },
+        {
+          "at": "Venus",
+          "value": "6,0 min"
+        },
+        {
+          "at": "Erde",
+          "value": "8,3 min"
+        },
+        {
+          "at": "Mars",
+          "value": "12,7 min"
+        },
+        {
+          "at": "Jupiter",
+          "value": "43 min"
+        },
+        {
+          "at": "Saturn",
+          "value": "1 h 20 min"
+        },
+        {
+          "at": "Uranus",
+          "value": "2 h 40 min"
+        },
+        {
+          "at": "Neptun",
+          "value": "4 h 10 min"
+        }
+      ],
+      "default": "—"
+    },
+    {
+      "name": "focus_distance_bar",
+      "type": "scale",
+      "element": "ss-focus-bar",
+      "variable": "focus",
+      "origin": "left",
+      "transition": {
+        "duration": 600,
+        "easing": "easeout"
+      },
+      "frames": [
+        {
+          "at": "Sonne",
+          "value": {
+            "x": 0.02,
+            "y": 1
+          }
+        },
+        {
+          "at": "Merkur",
+          "value": {
+            "x": 0.2,
+            "y": 1
+          }
+        },
+        {
+          "at": "Venus",
+          "value": {
+            "x": 0.3,
+            "y": 1
+          }
+        },
+        {
+          "at": "Erde",
+          "value": {
+            "x": 0.38,
+            "y": 1
+          }
+        },
+        {
+          "at": "Mars",
+          "value": {
+            "x": 0.46,
+            "y": 1
+          }
+        },
+        {
+          "at": "Jupiter",
+          "value": {
+            "x": 0.66,
+            "y": 1
+          }
+        },
+        {
+          "at": "Saturn",
+          "value": {
+            "x": 0.78,
+            "y": 1
+          }
+        },
+        {
+          "at": "Uranus",
+          "value": {
+            "x": 0.9,
+            "y": 1
+          }
+        },
+        {
+          "at": "Neptun",
+          "value": {
+            "x": 1,
+            "y": 1
+          }
+        }
+      ],
+      "default": {
+        "x": 0.01,
+        "y": 1
+      }
+    }
+  ]
+}

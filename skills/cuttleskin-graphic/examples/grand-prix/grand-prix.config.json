@@ -1,0 +1,117 @@
+{
+  "variables": [
+    {
+      "name": "car1Progress",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "defaultValue": 6
+    },
+    {
+      "name": "car2Progress",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "defaultValue": 4
+    },
+    {
+      "name": "car3Progress",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "defaultValue": 2
+    },
+    {
+      "name": "lap",
+      "type": "number",
+      "minimum": 1,
+      "maximum": 58,
+      "defaultValue": 1
+    },
+    { "name": "flag", "type": "text", "defaultValue": "green" }
+  ],
+  "transformations": [
+    {
+      "name": "car1_position",
+      "type": "motion-path",
+      "element": "gp-car-1",
+      "variable": "car1Progress",
+      "path": "gp-track",
+      "orient": true,
+      "frames": [
+        { "at": "$min", "value": 0 },
+        { "at": "$max", "value": 100 }
+      ]
+    },
+    {
+      "name": "car2_position",
+      "type": "motion-path",
+      "element": "gp-car-2",
+      "variable": "car2Progress",
+      "path": "gp-track",
+      "orient": true,
+      "frames": [
+        { "at": "$min", "value": 0 },
+        { "at": "$max", "value": 100 }
+      ]
+    },
+    {
+      "name": "car3_position",
+      "type": "motion-path",
+      "element": "gp-car-3",
+      "variable": "car3Progress",
+      "path": "gp-track",
+      "orient": true,
+      "frames": [
+        { "at": "$min", "value": 0 },
+        { "at": "$max", "value": 100 }
+      ]
+    },
+    {
+      "name": "lap_value",
+      "type": "text",
+      "element": "gp-lap-value",
+      "variable": "lap",
+      "bind": true
+    },
+    {
+      "name": "flag_panel_color",
+      "type": "fill-color",
+      "element": "gp-flag-panel",
+      "variable": "flag",
+      "frames": [
+        { "at": "green", "value": "#16a34a" },
+        { "at": "yellow", "value": "#eab308" },
+        { "at": "sc", "value": "#f97316", "label": "safetyCar" },
+        { "at": "red", "value": "#dc2626" }
+      ],
+      "default": "#4b5563"
+    },
+    {
+      "name": "flag_text",
+      "type": "text",
+      "element": "gp-flag-text",
+      "variable": "flag",
+      "frames": [
+        { "at": "green", "value": "GRÜNE FLAGGE" },
+        { "at": "yellow", "value": "GELBE FLAGGE" },
+        { "at": "sc", "value": "SAFETY CAR", "label": "safetyCar" },
+        { "at": "red", "value": "ROTE FLAGGE" }
+      ],
+      "default": "KEIN SIGNAL"
+    },
+    {
+      "name": "track_lights",
+      "type": "stroke-color",
+      "element": "gp-track-lights",
+      "variable": "flag",
+      "frames": [
+        { "at": "green", "value": "#22c55e" },
+        { "at": "yellow", "value": "#facc15" },
+        { "at": "sc", "value": "#fb923c", "label": "safetyCar" },
+        { "at": "red", "value": "#ef4444" }
+      ],
+      "default": "#9ca3af"
+    }
+  ]
+}
