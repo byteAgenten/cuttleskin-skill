@@ -29,3 +29,4 @@ Farbe nicht sichtbar.
 ## Ins Portal importieren
 
 Im Cuttleskin-Portal (https://cuttleskin.com) unter „Neue Grafik“ den Inhalt von `car-status.svg` und `car-status.config.json` einfügen.
+

@@ -2,6 +2,7 @@
 
 Maßgeblich ist das Prüfskript `scripts/validate.mjs`: Es nutzt denselben Parser wie das Cuttleskin-Portal. Bei Abweichungen zu dieser Beschreibung gilt das Ergebnis des Skripts.
 
+
 ## Wurzel
 
 ```ts

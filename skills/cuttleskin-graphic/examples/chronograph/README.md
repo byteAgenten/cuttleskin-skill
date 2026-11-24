@@ -2,12 +2,13 @@
 
 Armbanduhr mit poliertem Stahlgehäuse in Tonneau-Form, orangefarbenem Sonnenschliff-Zifferblatt, silberner Mitte mit feinen Rillen (etwas dunkler als das Gehäuse), drei Hilfszifferblättern und Datumsfenster. Auf dem Zifferblatt steht das cuttleskin-Logo aus Bild- und Wortmarke. Der Stil folgt einer Vorlage aus dem Uhrenbereich; Markenname, Logo und Schriftzüge des Originals sind nicht übernommen.
 
-| Datei                     | Inhalt                                        |
-| ------------------------- | --------------------------------------------- |
-| `chronograph.svg`         | Grafik; IDs mit dem Präfix `ch-`              |
-| `chronograph.config.json` | Variablen und Transformationen                |
+| Datei                     | Inhalt                           |
+| ------------------------- | -------------------------------- |
+| `chronograph.svg`         | Grafik; IDs mit dem Präfix `ch-` |
+| `chronograph.config.json` | Variablen und Transformationen   |
 
-Beide Dateien sind mit einem Generator-Skript erzeugt, das hier nicht enthalten ist; das SVG ist deshalb sehr regelmäßig aufgebaut und eignet sich vor allem als Anschauung für Schattierung, Facetten und Zeiger.
+Beide Dateien sind mit einem Generator-Skript erzeugt; das SVG ist deshalb sehr regelmäßig aufgebaut und eignet sich vor allem als Anschauung für Schattierung, Facetten und Zeiger.
+
 
 ## Variablen
 
@@ -45,11 +46,12 @@ Beide Dateien sind mit einem Generator-Skript erzeugt, das hier nicht enthalten 
 
 ## Beispiel für Home Assistant
 
-Template-Sensoren mit `now().hour`, `now().minute`, `now().second` und `now().day`; für Sekunden mit Auslöser `time_pattern` (`seconds: "/1"`).
+Template-Sensoren mit `now().hour`, `now().minute`, `now().second` und `now().day`; für Sekunden mit Auslöser `time_pattern` (`seconds: "/1"`). Die exportierten Dateien liegen in `config/www/cuttleskin/chronograph/`.
 
 ```yaml
 type: custom:cuttleskin-card
-graphic: <ID aus dem Portal>
+svg: /local/cuttleskin/chronograph/chronograph.svg
+config: /local/cuttleskin/chronograph/chronograph.config.json
 variables:
   hour: sensor.uhr_stunde
   minute: sensor.uhr_minute

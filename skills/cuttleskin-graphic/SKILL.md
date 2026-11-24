@@ -17,6 +17,7 @@ The cuttleskin runtime reads both files, sets the variable values from outside a
 
 The examples are in `examples/` inside the skill folder, the validator is `scripts/validate.mjs`. Paths such as `examples/speedometer/…` refer to that folder.
 
+
 The full reference of all fields is in [reference/config-schema.md](reference/config-schema.md), proven patterns are in [reference/patterns.md](reference/patterns.md). Both reference files are written in German.
 
 ## Workflow
@@ -38,6 +39,8 @@ The full reference of all fields is in [reference/config-schema.md](reference/co
 5. **Validate** with the script (see below). Fix all errors, weigh the warnings.
 6. **Preview** if possible.
    - In the portal (https://cuttleskin.com): “New graphic”, paste SVG source and configuration, then move through the values with the playhead in the editor.
+
+
 7. **Document.** For every graphic a short `README.md` with a table of the variables, following `examples/car-status/README.md`.
 
 ## Rules for the SVG
@@ -112,25 +115,25 @@ The full reference of all fields is in [reference/config-schema.md](reference/co
 }
 ```
 
-| Type                          | Frame value     | Effect                                                              |
-| ----------------------------- | --------------- | ------------------------------------------------------------------- |
-| `rotate`                      | number (degrees) | rotation around `origin`                                           |
-| `translate`                   | `{ "x", "y" }`  | movement (offset in `<svg>` coordinates)                            |
-| `scale`                       | `{ "x", "y" }`  | factor around `origin`                                              |
-| `opacity`                     | number **0–1**  | opacity; at 0 also invisible to clicks                              |
-| `fill-color` / `stroke-color` | CSS color       | fill or stroke color, interpolated                                  |
-| `stroke-width`                | number          | line width                                                          |
-| `text`                        | string          | text content; with `"bind": true` the rounded variable value        |
-| `image-url`                   | string          | `href` of an `<image>`; with `bind` directly the variable value     |
-| `motion-path`                 | number **0–100** | position on the path `path` in % of its length; `orient` rotates   |
+| Type                          | Frame value      | Effect                                                           |
+| ----------------------------- | ---------------- | ---------------------------------------------------------------- |
+| `rotate`                      | number (degrees) | rotation around `origin`                                         |
+| `translate`                   | `{ "x", "y" }`   | movement (offset in `<svg>` coordinates)                         |
+| `scale`                       | `{ "x", "y" }`   | factor around `origin`                                           |
+| `opacity`                     | number **0–1**   | opacity; at 0 also invisible to clicks                           |
+| `fill-color` / `stroke-color` | CSS color        | fill or stroke color, interpolated                               |
+| `stroke-width`                | number           | line width                                                       |
+| `text`                        | string           | text content; with `"bind": true` the rounded variable value     |
+| `image-url`                   | string           | `href` of an `<image>`; with `bind` directly the variable value  |
+| `motion-path`                 | number **0–100** | position on the path `path` in % of its length; `orient` rotates |
 
 A frame is `{ "at": position, "value": value }`, optionally with `easing` (curve up to the next frame) and `label` (description). Positions per variable type:
 
-| Variable type | Allowed positions `at`                     | Behavior between frames                          |
-| ------------- | ------------------------------------------ | ------------------------------------------------ |
-| `number`      | `"$min"`, `"$max"`, a number in the range  | linear interpolation (or easing per frame)       |
-| `boolean`     | `false`, `true`                            | switches                                         |
-| `text`        | any text                                   | switches when the text matches exactly           |
+| Variable type | Allowed positions `at`                    | Behavior between frames                    |
+| ------------- | ----------------------------------------- | ------------------------------------------ |
+| `number`      | `"$min"`, `"$max"`, a number in the range | linear interpolation (or easing per frame) |
+| `boolean`     | `false`, `true`                           | switches                                   |
+| `text`        | any text                                  | switches when the text matches exactly     |
 
 `default` on the transformation applies wherever no frame matches, e.g. for unknown texts.
 
@@ -141,6 +144,7 @@ Needs only Node.js 18 or later, no packages:
 ```sh
 node <skill-folder>/scripts/validate.mjs <name>.svg <name>.config.json
 ```
+
 
 The script checks:
 
@@ -167,18 +171,18 @@ Exit code 1 on errors. Only hand over when no errors are reported.
 
 ## Examples
 
-| File                                                     | Shows                                                                             |
-| -------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `examples/speedometer/speedometer.svg` + `.config.json`  | needle (`rotate`), color band over 3 frames, bound text                           |
-| `examples/speedometer/lcars.*`, `retro-led.*`, `pixel.*` | many segments that are shown and hidden one after the other                      |
-| `examples/speedometer/comic.*`, `cyberpunk.*`            | effects from a threshold on, through additional frames                            |
-| `examples/car-status/car-status.*`                       | 15 `boolean` variables: doors rotate around hinges, show/hide, color changes      |
-| `examples/climate/climate.*`                             | combined instrument: two segment arcs, colors and status text for two variables   |
-| `examples/weather-oracle/weather-oracle.*`               | three instruments in one graphic, level via `scale`, day/night via opacity        |
-| `examples/metro-map/metro-map.*`                         | trains follow their line via `motion-path`, disruption as `boolean` with text     |
-| `examples/grand-prix/grand-prix.*`                       | `motion-path` with `"orient": true`, car shape via `<use>` and `currentColor`     |
-| `examples/sepia/sepia.*`                                 | organic figure: many transformations on one variable, mood levels                 |
-| `examples/solar-system/solar-system.*`                   | 60 transformations from a generator (`generate.mjs`), counter-rotation for text   |
-| `examples/chronograph/chronograph.*`                     | watch with hands, sub-dials and date; shading and facets in pure SVG              |
+| File                                                     | Shows                                                                           |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `examples/speedometer/speedometer.svg` + `.config.json`  | needle (`rotate`), color band over 3 frames, bound text                         |
+| `examples/speedometer/lcars.*`, `retro-led.*`, `pixel.*` | many segments that are shown and hidden one after the other                     |
+| `examples/speedometer/comic.*`, `cyberpunk.*`            | effects from a threshold on, through additional frames                          |
+| `examples/car-status/car-status.*`                       | 15 `boolean` variables: doors rotate around hinges, show/hide, color changes    |
+| `examples/climate/climate.*`                             | combined instrument: two segment arcs, colors and status text for two variables |
+| `examples/weather-oracle/weather-oracle.*`               | three instruments in one graphic, level via `scale`, day/night via opacity      |
+| `examples/metro-map/metro-map.*`                         | trains follow their line via `motion-path`, disruption as `boolean` with text   |
+| `examples/grand-prix/grand-prix.*`                       | `motion-path` with `"orient": true`, car shape via `<use>` and `currentColor`   |
+| `examples/sepia/sepia.*`                                 | organic figure: many transformations on one variable, mood levels               |
+| `examples/solar-system/solar-system.*`                   | 60 transformations from a generator (`generate.mjs`), counter-rotation for text |
+| `examples/chronograph/chronograph.*`                     | watch with hands, sub-dials and date; shading and facets in pure SVG            |
 
 Before a new graphic, read the best matching example and adopt its structure.

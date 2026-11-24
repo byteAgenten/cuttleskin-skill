@@ -18,6 +18,7 @@ Beide Dateien werden erzeugt. Änderungen gehören in `generate.mjs`, danach neu
 node examples/solar-system/generate.mjs examples/solar-system
 ```
 
+
 ## Variablen
 
 | Variable | Typ       | Bereich      | Standard | Wirkung                                                                             |

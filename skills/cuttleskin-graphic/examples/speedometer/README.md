@@ -38,3 +38,4 @@ A speedometer graphic driven by the cuttleskin browser bundle (`cuttleskin.iife.
   - `text` (bind) and `text` frames (IDLE, GO!, TURBO!)
   - the configuration sets `settings.imageRendering: "speed"` for pixelated image scaling
   - the car images live in `pixel/`; upload them in the portal editor under “Images”
+
